@@ -39,7 +39,7 @@ for_window [class=".*"] border pixel 0
 
 # Gaps
 gaps inner 15
-gaps outer 0
+gaps outer -5
 smart_gaps on
 
 # bind mailspring to 2
@@ -47,6 +47,12 @@ assign [class="mailspring"] → 2
 
 # Automatically start xfce4-power-manager
 exec --no-startup-id xfce4-power-manager
+
+# Automatically start dropbox
+exec --no-startup-id dropbox
+
+# Automatically start redshift
+exec --no-startup-id redshift -l 42:-71
 
 # Background
 exec --no-startup-id nitrogen --restore
