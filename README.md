@@ -9,3 +9,5 @@ i3status.conf /etc/i3status.conf
 Xresources: ~/.Xresources
 
 dunst: ~/.config/dunst/
+
+alias (add to existing): ~/.bashrc
