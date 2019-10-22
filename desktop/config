@@ -227,6 +227,6 @@ bindsym $mod+p mode "resize"
 bar {
         status_command i3status
 	workspace_buttons yes
-	mode hide
+	mode show
 	modifier Mod1
 }
