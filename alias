@@ -3,6 +3,6 @@ alias gh='cd ~/Documents/github/'
 alias s='spotify && disown'
 alias ml='cd /usr/local/MATLAB/R2019a/bin && ./matlab'
 alias jl='jupyter lab'
-alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=gstites,workgroup=olin.edu,uid=maeve'
+alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
 # redshift
 alias flux='redshift-gtk'
