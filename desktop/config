@@ -42,17 +42,14 @@ gaps inner 15
 gaps outer -5
 smart_gaps on
 
-# bind mailspring to 2
-assign [class="mailspring"] → 2
-
-# Automatically start xfce4-power-manager
-exec --no-startup-id xfce4-power-manager
-
 # Automatically start dropbox
 exec --no-startup-id dropbox
 
+# Automatically start imwheel
+exec --no-startup-id imwheel
+
 # Automatically start redshift
-exec --no-startup-id redshift -l 42:-71
+# exec --no-startup-id redshift -l 42:-71
 
 # bind mod + f to open file manager
 bindsym $mod+f exec pcmanfm
@@ -73,6 +70,10 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# fix monitor on startup
+# exec --no-startup-id xrandr --output HDMI-1 --rotate left
+# exec --no-startup-id xrandr --output HDMI-1 --left-of DP-1
 
 ###########################
 ####### MY STUFF ##########
@@ -227,7 +228,7 @@ bindsym $mod+p mode "resize"
 bar {
         status_command i3status
 	workspace_buttons yes
-	mode show
+	mode dock
 	modifier Mod1
   colors {
         background #222222
