@@ -49,7 +49,10 @@ assign [class="mailspring"] → 2
 exec --no-startup-id xfce4-power-manager
 
 # Automatically start dropbox
-exec --no-startup-id dropbox
+# exec --no-startup-id dropbox
+
+# Automatically start syncthing
+exec --no-startup-id syncthing
 
 # Automatically start redshift
 exec --no-startup-id redshift -l 42:-71
