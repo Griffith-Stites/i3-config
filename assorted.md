@@ -64,3 +64,7 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 ## Scroll Speed
 * [imwheelrc](www.webupd8.org/2015/12/how-to-change-mouse-scroll-wheel-speed.html)
   * Start with imwheel -b 45 to only look at scroll input
+
+## Install Fonts
+* Download Font
+* Move to /usr/share/fonts
