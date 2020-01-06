@@ -52,7 +52,7 @@ exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id dropbox
 
 # Automatically start syncthing
-exec --no-startup-id syncthing
+exec --no-startup-id syncthing -no-browser
 
 # Automatically start redshift
 exec --no-startup-id redshift -l 42:-71
@@ -67,8 +67,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xbindkeys
 
 # Configure default workspaces
-exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
-# exec --no-startup-id i3-msg 'workspace 2:Mail; exec mailspring'
+exec --ro-startup-id i3-msg 'workspace 1:Web; exec firefox'
 
 # Change the focused color
 client.focused          #848484 #5f676a #ffffff #484e50   #5f676a
@@ -229,7 +228,7 @@ bindsym $mod+p mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	workspace_buttons no
+	workspace_buttons yes
 	mode hide
 	modifier Mod1
 }
