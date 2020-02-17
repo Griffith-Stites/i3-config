@@ -68,3 +68,7 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 ## Install Fonts
 * Download Font
 * Move to /usr/share/fonts
+
+## Remmina
+* Install from aur: https://aur.archlinux.org/packages/remmina-git
+* Install rdesktop for rdp support: https://aur.archlinux.org/packages/remmina-plugin-rdesktop/
