@@ -42,11 +42,11 @@ gaps inner 15
 gaps outer -5
 smart_gaps on
 
-# Automatically start dropbox
-exec --no-startup-id dropbox
+# Automatically start syncthing
+exec --no-startup-id syncthing -no-browser
 
 # Automatically start imwheel
-exec --no-startup-id imwheel
+exec --no-startup-id imwheel -b 45
 
 # Automatically start redshift
 # exec --no-startup-id redshift -l 42:-71
@@ -62,7 +62,6 @@ exec --no-startup-id xbindkeys
 
 # Configure default workspaces
 exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
-# exec --no-startup-id i3-msg 'workspace 2:Mail; exec mailspring'
 
 # Change the focused color
 client.focused          #848484 #5f676a #ffffff #484e50   #5f676a
@@ -72,8 +71,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # fix monitor on startup
-# exec --no-startup-id xrandr --output HDMI-1 --rotate left
-# exec --no-startup-id xrandr --output HDMI-1 --left-of DP-1
+exec_always ~/.screenlayout/default.sh
 
 ###########################
 ####### MY STUFF ##########
