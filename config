@@ -54,8 +54,8 @@ exec --no-startup-id xfce4-power-manager
 # Automatically start syncthing
 exec --no-startup-id syncthing -no-browser
 
-# Automatically start redshift
-exec --no-startup-id redshift -l 42:-71
+# Automatically start xflux
+exec --no-startup-id xflux -z 02492
 
 # bind mod + f to open file manager
 bindsym $mod+f exec pcmanfm
