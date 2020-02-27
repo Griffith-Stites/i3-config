@@ -144,10 +144,10 @@ alias s='spotify && disown'
 alias ml='cd /usr/local/MATLAB/R2019a/bin && ./matlab'
 alias jl='jupyter lab'
 alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
-# redshift
-alias flux='redshift -l 42:-71'
-# set default text editor
-export EDITOR='vim'
-export VISUAL='vim'
+alias sy='cd ~/Documents/syncthing/'
+alias cl='cd ~/Documents/syncthing/school/classwork'
 
-export BROWSER='firefox'
+# set default text editor
+export EDITOR='atom'
+export VISUAL='atom'
+# export BROWSER='firefox.desktop'
