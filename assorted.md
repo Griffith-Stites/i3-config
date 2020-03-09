@@ -50,6 +50,7 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 * sudo prime-select ##### sets default
   * Intel or nvidia
 * sudo prime-select query
+* [Manjaro](https://forum.manjaro.org/t/how-to-install-intel-graphics/14883/2)
 
 ## UML Diagrams
 * Pyreverse
