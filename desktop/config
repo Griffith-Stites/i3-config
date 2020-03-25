@@ -79,7 +79,7 @@ mode "quiet" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Move a window in and out the quiet mode
-        bindsym q exec ~/.config/i3/quiet-cmd.py toggle ; mode "default"
+        bindsym Tab exec ~/.config/i3/quiet-cmd.py toggle ; mode "default"
 
         # Resize the window in quiet mode
         bindsym s exec ~/.config/i3/quiet-cmd.py resize small
