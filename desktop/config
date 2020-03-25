@@ -93,8 +93,8 @@ mode "quiet" {
         bindsym $mod+d mode "default"
 }
 
-bindsym $mod+q exec $HOME/.config/i3/quiet-cmd.py switch
-bindsym $mod+Shift+q mode "quiet"
+bindsym $mod+grave exec $HOME/.config/i3/quiet-cmd.py switch
+bindsym $mod+Shift+grave mode "quiet"
 # exec_always $HOME/.config/i3/quiet-toggle-bar.py --kill
 
 ###########################
