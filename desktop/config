@@ -73,29 +73,24 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # fix monitor on startup
 exec_always ~/.screenlayout/default.sh
 
-# Quiet mode
+# Focus Mode
+# Resizes windows to float in screen, based on small, med, and large
+# can "exit" this mode via making the window not floating
 
-mode "quiet" {
-        # These bindings trigger as soon as you enter the resize mode
+mode "focus" {
+        # These bindings trigger as soon as you enter the focus mode
+        bindsym s floating enable, resize set 1000 1000, move position center
+        bindsym m floating enable, resize set 1600 1600, move position center
+        bindsym l floating enable, resize set 2000 1800, move position center
 
-        # Move a window in and out the quiet mode
-        bindsym Tab exec ~/.config/i3/quiet-cmd.py toggle ; mode "default"
-
-        # Resize the window in quiet mode
-        bindsym s exec ~/.config/i3/quiet-cmd.py resize small
-        bindsym m exec ~/.config/i3/quiet-cmd.py resize medium
-        bindsym l exec ~/.config/i3/quiet-cmd.py resize large
-
-        # back to normal
-        bindsym Escape mode "default"
+        # can exit via just not floating
+        # back to normal: Enter or Escape or space
         bindsym Return mode "default"
-        bindsym Caps_Lock mode "default"
-        bindsym $mod+d mode "default"
+        bindsym Escape mode "default"
+        bindsym space mode "default"
 }
 
-bindsym $mod+grave exec $HOME/.config/i3/quiet-cmd.py switch
-bindsym $mod+Shift+grave mode "quiet"
-# exec_always $HOME/.config/i3/quiet-toggle-bar.py --kill
+bindsym $mod+space mode "focus"
 
 ###########################
 ####### MY STUFF ##########
@@ -165,8 +160,8 @@ bindsym $mod+period layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+## change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
