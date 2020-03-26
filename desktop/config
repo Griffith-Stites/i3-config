@@ -64,12 +64,15 @@ exec --no-startup-id xbindkeys
 # Configure default workspaces
 exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
 
+# Change the font
+font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
+
 # Change the focused color
-client.focused          #848484 #5f676a #ffffff #484e50   #5f676a
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #660066 #660066 #ffccff #660066   #660066
+client.focused_inactive #6b476b #6b476b #ffccff #6b476b   #6b476b
+client.unfocused        #222222 #222222 #ffccff #292d2e   #222222
+client.urgent           #900000 #900000 #ffccff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffccff #000000   #0c0c0c
 
 # fix monitor on startup
 exec_always ~/.screenlayout/default.sh
@@ -162,7 +165,7 @@ bindsym $mod+period layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 ## change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_togglefont pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
 
 # focus the parent container
 bindsym $mod+a focus parent
