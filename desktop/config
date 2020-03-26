@@ -39,8 +39,9 @@ for_window [class=".*"] border pixel 0
 
 # Gaps
 gaps inner 15
-gaps outer 0
-smart_gaps on
+gaps outer 225
+# gaps horizontal 300
+# smart_gaps on
 
 # Automatically start syncthing
 exec --no-startup-id syncthing -no-browser
