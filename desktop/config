@@ -250,14 +250,16 @@ bar {
 	modifier Mod1
   # font pango:DejaVu Sans Mono 15
   font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
+  height 35
+
   colors {
         background #222222
-        statusline #eeeeee
+        statusline #ffccff
         separator #222222
         #                  border  backgr. text
-        focused_workspace  #660066 #660066 #ffffff
-        active_workspace   #5f676a #5f676a #ffffff
-        inactive_workspace #222222 #222222 #888888
-        urgent_workspace   #900000 #900000 #ffffff
+        focused_workspace  #660066 #660066 #ffccff
+        active_workspace   #5f676a #5f676a #ffccff
+        inactive_workspace #222222 #222222 #ffccff
+        urgent_workspace   #900000 #900000 #ffccff
      }
 }
