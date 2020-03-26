@@ -246,16 +246,18 @@ bindsym $mod+p mode "resize"
 bar {
         status_command i3status
 	workspace_buttons yes
-	mode dock
+	mode hide
 	modifier Mod1
+  # font pango:DejaVu Sans Mono 15
+  font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
   colors {
         background #222222
         statusline #eeeeee
-        separator #666666
+        separator #222222
         #                  border  backgr. text
-        focused_workspace  #848484 #5f676a #ffffff
-        active_workspace   #848484 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
+        focused_workspace  #660066 #660066 #ffffff
+        active_workspace   #5f676a #5f676a #ffffff
+        inactive_workspace #222222 #222222 #888888
+        urgent_workspace   #900000 #900000 #ffffff
      }
 }
