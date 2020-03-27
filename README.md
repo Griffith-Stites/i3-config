@@ -15,3 +15,6 @@ dunst: ~/.config/dunst/
 alias (add to existing): ~/.bashrc
 
 .imwheelrc: ~/.imwheelrc
+
+gtkrc-2.0: ~/.gtkrc-2.0
+Also can edit lightdm-gtk-greeter-settings
