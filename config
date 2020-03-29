@@ -67,14 +67,39 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xbindkeys
 
 # Configure default workspaces
-exec --ro-startup-id i3-msg 'workspace 1:Web; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
+
+# Change the font
+font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 
 # Change the focused color
-client.focused          #848484 #5f676a #ffffff #484e50   #5f676a
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #660066 #660066 #ffccff #660066   #660066
+client.focused_inactive #6b476b #6b476b #ffccff #6b476b   #6b476b
+client.unfocused        #222222 #222222 #ffccff #292d2e   #222222
+client.urgent           #900000 #900000 #ffccff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffccff #000000   #0c0c0c
+
+# fix monitor on startup
+exec_always ~/.screenlayout/default.sh
+
+# Focus Mode
+# Resizes windows to float in screen, based on small, med, and large
+# can "exit" this mode via making the window not floating
+
+mode "focus" {
+        # These bindings trigger as soon as you enter the focus mode
+        bindsym s floating enable, resize set 1000 1000, move position center
+        bindsym m floating enable, resize set 1600 1600, move position center
+        bindsym l floating enable, resize set 2000 1800, move position center
+
+        # can exit via just not floating
+        # back to normal: Enter or Escape or space
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym space mode "default"
+}
+
+bindsym $mod+space mode "focus"
 
 ###########################
 ####### MY STUFF ##########
@@ -97,11 +122,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+apostrophe kill
 
 # start dmenu (a program launcher)
-bindsym $mod+e exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+e exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+e exec dmenu_run -nb '#222222' -sf '#ffccff' -sb '#660066' -nf '#ffccff'
 
 # change focus
 bindsym $mod+h focus left
@@ -144,8 +169,8 @@ bindsym $mod+period layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+## change focus between tiling / floating windows
+# bindsym $mod+space focus mode_togglefont pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -166,7 +191,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# switch to workspacecolors
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -231,4 +256,17 @@ bar {
 	workspace_buttons yes
 	mode hide
 	modifier Mod1
+  # font pango:DejaVu Sans Mono 15
+  font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 14px
+  height 25
+  colors {
+        background #222222
+        statusline #ffccff
+        separator #222222
+        #                  border  backgr. text
+        focused_workspace  #660066 #660066 #ffccff
+        active_workspace   #5f676a #5f676a #ffccff
+        inactive_workspace #222222 #222222 #ffccff
+        urgent_workspace   #900000 #900000 #ffccff
+     }
 }
