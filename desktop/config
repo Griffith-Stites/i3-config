@@ -258,13 +258,13 @@ bar {
   height 24
 
   colors {
-        background #222222
+        background #3C4147
         statusline #ffccff
-        separator #222222
+        separator #3C4147
         #                  border  backgr. text
         focused_workspace  #660066 #660066 #ffccff
         active_workspace   #5f676a #5f676a #ffccff
-        inactive_workspace #222222 #222222 #ffccff
+        inactive_workspace #3C4147 #3C4147 #ffccff
         urgent_workspace   #900000 #900000 #ffccff
      }
 }
