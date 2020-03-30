@@ -254,8 +254,8 @@ bar {
 	mode hide
 	modifier Mod1
   # font pango:DejaVu Sans Mono 15
-  font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
-  height 35
+  font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 14px
+  height 24
 
   colors {
         background #222222
