@@ -18,3 +18,6 @@ alias (add to existing): ~/.bashrc
 
 gtkrc-2.0: ~/.gtkrc-2.0
 Also can edit lightdm-gtk-greeter-settings
+
+oomox-Purple_
+~/.themes
