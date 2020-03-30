@@ -94,7 +94,7 @@ mode "focus" {
         bindsym space mode "default"
 }
 
-bindsym $mod+space mode "focus"
+bindsym $mod+j mode "focus"
 
 ###########################
 ####### MY STUFF ##########
@@ -121,7 +121,9 @@ bindsym $mod+Shift+apostrophe kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+e exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+e exec dmenu_run -nb '#222222' -sf '#ffccff' -sb '#660066' -nf '#ffccff'
+# bindsym $mod+e exec dmenu_run -nb '#222222' -sf '#ffccff' -sb '#660066' -nf '#ffccff'
+bindsym $mod+e exec rofi -show drun
+bindsym $mod+space exec rofi -show
 
 # change focus
 bindsym $mod+h focus left
@@ -165,7 +167,7 @@ bindsym $mod+period layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 ## change focus between tiling / floating windows
-# bindsym $mod+space focus mode_togglefont pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
+# bindsym $mod+c focus mode_togglefont pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 20px
 
 # focus the parent container
 bindsym $mod+a focus parent
