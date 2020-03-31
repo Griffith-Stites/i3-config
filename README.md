@@ -21,3 +21,9 @@ Also can edit lightdm-gtk-greeter-settings
 
 oomox-Purple_
 ~/.themes
+
+config.rofi
+~/.config/rofi/
+
+To do:
+* Upload icons

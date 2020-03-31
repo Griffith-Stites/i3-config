@@ -99,7 +99,7 @@ mode "focus" {
         bindsym space mode "default"
 }
 
-bindsym $mod+space mode "focus"
+bindsym $mod+j mode "focus"
 
 ###########################
 ####### MY STUFF ##########
@@ -126,7 +126,9 @@ bindsym $mod+Shift+apostrophe kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+e exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+e exec dmenu_run -nb '#222222' -sf '#ffccff' -sb '#660066' -nf '#ffccff'
+# bindsym $mod+e exec dmenu_run -nb '#222222' -sf '#ffccff' -sb '#660066' -nf '#ffccff'
+bindsym $mod+e exec rofi -show drun
+bindsym $mod+space exec rofi -show
 
 # change focus
 bindsym $mod+h focus left
@@ -260,13 +262,13 @@ bar {
   font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 14px
   height 25
   colors {
-        background #222222
-        statusline #ffccff
-        separator #222222
+  background #3C4147
+  statusline #ffccff
+  separator #3C4147
         #                  border  backgr. text
         focused_workspace  #660066 #660066 #ffccff
         active_workspace   #5f676a #5f676a #ffccff
-        inactive_workspace #222222 #222222 #ffccff
+        inactive_workspace #3C4147 #3C4147 #ffccff
         urgent_workspace   #900000 #900000 #ffccff
      }
 }
