@@ -76,3 +76,6 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 
 ## Remove Keyring Password
 * [Install Seahorse](https://www.fosslinux.com/2561/how-to-disable-keyring-in-ubuntu-elementary-os-and-linux-mint.htm)
+
+## Emojis
+* https://victor.kropp.name/blog/emoji-on-linux/
