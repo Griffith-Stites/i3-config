@@ -79,3 +79,6 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 
 ## Emojis
 * https://victor.kropp.name/blog/emoji-on-linux/
+
+## Google Drive Backup (rclone)
+* https://www.howtogeek.com/451262/how-to-use-rclone-to-back-up-to-google-drive-on-linux/
