@@ -34,6 +34,8 @@ exec --no-startup-id nm-applet
 ####### MY STUFF ##########
 ###########################
 
+mouse_warping output
+
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
 
@@ -52,6 +54,9 @@ exec --no-startup-id imwheel -b 45
 # Automatically start redshift
 # exec --no-startup-id redshift -l 42:-71
 
+# Automatically start wal
+exec --no-startup-id wal -R
+
 # bind mod + f to open file manager
 bindsym $mod+f exec pcmanfm
 
@@ -67,12 +72,21 @@ exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
 # Change the font
 font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 
-# Change the focused color
-client.focused          #660066 #660066 #ffccff #660066   #660066
-client.focused_inactive #6b476b #6b476b #ffccff #6b476b   #6b476b
-client.unfocused        #222222 #222222 #ffccff #292d2e   #222222
-client.urgent           #900000 #900000 #ffccff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffccff #000000   #0c0c0c
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 # fix monitor on startup
 exec_always ~/.screenlayout/default.sh
@@ -126,10 +140,16 @@ bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+t focus down
-bindsym $mod+n focus up
-bindsym $mod+s focus right
+# bindsym $mod+h focus left
+# bindsym $mod+t focus down
+# bindsym $mod+n focus up
+# bindsym $mod+s focus right
+
+set $movemouse "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
+bindsym $mod+h focus left; exec $movemouse
+bindsym $mod+t focus down; exec $movemouse
+bindsym $mod+n focus up; exec $movemouse
+bindsym $mod+s focus right; exec $movemouse
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

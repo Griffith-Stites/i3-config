@@ -16,6 +16,7 @@ Interesting programs to explore:
 * projectm-pulseaudio - audio visualizer
 * cava - audio visualizer
 * lfm - file manager
+* ranger - file manager
 * pywal - color scheme manager
 * franz - messaging service
 
