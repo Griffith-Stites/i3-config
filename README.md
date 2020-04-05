@@ -1,29 +1,24 @@
-# i3-config
-Config for i3 Desktop Environment
+## Loading Config
 
-## File locations
-reload i3 with "i3-msg reload" "i3-msg restart"
+1. Copy home folder (if on desktop 4K, also copy desktop home folder and replace conflicting files)
 
-config: ~/.config/i3/config
+2. Load configs with lxsession
 
-i3status.conf /etc/i3status.conf
+3. If you want keyboard backspace and backslash swaped, add the pc and us files in the keyboard folder
 
-Xresources: ~/.Xresources
+Dependencies:
+* i3 gaps
+* Rofi
+* [Apple Color Emoji font](https://www.joypixels.com/downloadfonts) (put in .fonts)
 
-dunst: ~/.config/dunst/
 
-alias (add to existing): ~/.bashrc
-
-.imwheelrc: ~/.imwheelrc
-
-gtkrc-2.0: ~/.gtkrc-2.0
-Also can edit lightdm-gtk-greeter-settings
-
-oomox-Purple_
-~/.themes
-
-config.rofi
-~/.config/rofi/
+Interesting programs to explore:
+* projectm-pulseaudio - audio visualizer
+* cava - audio visualizer
+* lfm - file manager
+* pywal - color scheme manager
+* franz - messaging service
 
 To do:
-* Upload icons
+* Replace xbindkeys with i3 commands
+* Make new terminal based off of theme
