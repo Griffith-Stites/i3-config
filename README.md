@@ -20,6 +20,7 @@ Interesting programs to explore:
 * pywal - color scheme manager
 Stores schemes in ~/.cache/wal/schemes
 * franz - messaging service
+* https://github.com/lbforks/pipes.sh
 
 To do:
 * Replace xbindkeys with i3 commands
