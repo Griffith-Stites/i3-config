@@ -23,5 +23,5 @@ Stores schemes in ~/.cache/wal/schemes
 
 To do:
 * Replace xbindkeys with i3 commands
-* Make new terminal based off of theme
-* Update i3 config on desktop to have different  colors on stacked
+
+Please do not use polybar
