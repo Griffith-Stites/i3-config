@@ -18,8 +18,10 @@ Interesting programs to explore:
 * lfm - file manager
 * ranger - file manager
 * pywal - color scheme manager
+Stores schemes in ~/.cache/wal/schemes
 * franz - messaging service
 
 To do:
 * Replace xbindkeys with i3 commands
 * Make new terminal based off of theme
+* Update i3 config on desktop to have different  colors on stacked

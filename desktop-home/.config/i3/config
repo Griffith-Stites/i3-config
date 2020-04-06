@@ -17,16 +17,29 @@ font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 for_window [class=".*"] border pixel 0
 gaps inner 15
 gaps outer 225
-smart_gaps off
 
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+
+set_from_resource $bg i3wm.background #f0f0f0
+set_from_resource $fg i3wm.foreground #f0f0f0
+set_from_resource $color0 i3wm.color0 #f0f0f0
+set_from_resource $color1 i3wm.color1 #f0f0f0
+set_from_resource $color2 i3wm.color2 #f0f0f0
+set_from_resource $color3 i3wm.color3 #f0f0f0
+set_from_resource $color4 i3wm.color4 #f0f0f0
+set_from_resource $color5 i3wm.color5 #f0f0f0
+set_from_resource $color6 i3wm.color6 #f0f0f0
+set_from_resource $color7 i3wm.color7 #f0f0f0
+set_from_resource $color8 i3wm.color8 #f0f0f0
+set_from_resource $color9 i3wm.color9 #f0f0f0
+set_from_resource $color10 i3wm.color10 #f0f0f0
+set_from_resource $color11 i3wm.color11 #f0f0f0
+set_from_resource $color12 i3wm.color12 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
+client.focused          $color2 $color2 $fg  $color2   $color2
+client.focused_inactive $color3 $color3 $fg  $color3   $color3
+client.unfocused        $color8 $color8 $fg  $color8   $color8
+client.urgent           $color1 $color1 $fg  $color1   $color1
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 bar {
@@ -37,14 +50,14 @@ bar {
         font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 14px
         height 25
         colors {
-              background #3C4147
-              statusline #ffccff
-              separator #3C4147
+              background $bg
+              statusline $fg
+              separator $bg
               #                  border  backgr. text
-              focused_workspace  #660066 #660066 #ffccff
-              active_workspace   #5f676a #5f676a #ffccff
-              inactive_workspace #3C4147 #3C4147 #ffccff
-              urgent_workspace   #900000 #900000 #ffccff
+              focused_workspace  $color2 $color2 $fg
+              active_workspace   $color2 $color2 $fg
+              inactive_workspace $color3 $color3 $fg
+              urgent_workspace   $color1 $color1 $fg
      }
 }
 
