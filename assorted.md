@@ -49,3 +49,10 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 
 ## Google Drive Backup (rclone)
 * https://www.howtogeek.com/451262/how-to-use-rclone-to-back-up-to-google-drive-on-linux/
+
+## Ranger open fix
+* https://www.reddit.com/r/ranger/comments/f6b6u7/how_to_open_containing_folder_with_ranger/
+
+## Audio visualizers
+* projectm-pulseaudio
+* cava 

@@ -10,19 +10,14 @@ Dependencies:
 * i3 gaps
 * Rofi
 * [Apple Color Emoji font](https://www.joypixels.com/downloadfonts) (put in .fonts)
-
+* ranger
+* pywal
 
 Interesting programs to explore:
 * projectm-pulseaudio - audio visualizer
 * cava - audio visualizer
-* lfm - file manager
-* ranger - file manager
-* pywal - color scheme manager
-Stores schemes in ~/.cache/wal/schemes
 * franz - messaging service
 * https://github.com/lbforks/pipes.sh
 
 To do:
 * Replace xbindkeys with i3 commands
-
-Please do not use polybar

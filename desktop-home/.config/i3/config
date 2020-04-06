@@ -125,8 +125,9 @@ bindsym $mod+Shift+n move up
 bindsym $mod+Shift+s move right
 
 # custom
-bindsym $mod+f exec pcmanfm
+bindsym $mod+f exec --no-startup-id urxvt -e ranger
 bindsym $mod+j mode "focus"
+exec --no-startup-id urxvt
 bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
 
