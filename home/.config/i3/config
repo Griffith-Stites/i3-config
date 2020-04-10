@@ -6,7 +6,10 @@ exec --no-startup-id syncthing -no-browser
 exec --no-startup-id xflux -z 02492
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xbindkeys
+exec --no-startup-id wal -R
 exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
+exec_always ~/.screenlayout/default.sh
+# exec --no-startup-id urxvt -e sudo mount /dev/sda5 /run/media/maeve/1D80D4A75A2D1961/
 
 # Aesthetics
 font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
@@ -16,28 +19,46 @@ gaps inner 15
 gaps outer -5
 smart_gaps on
 
-client.focused          #660066 #660066 #ffccff #660066   #660066
-client.focused_inactive #6b476b #6b476b #ffccff #6b476b   #6b476b
-client.unfocused        #222222 #222222 #ffccff #292d2e   #222222
-client.urgent           #900000 #900000 #ffccff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffccff #000000   #0c0c0c
+
+set_from_resource $bg i3wm.background #f0f0f0
+set_from_resource $fg i3wm.foreground #f0f0f0
+set_from_resource $color0 i3wm.color0 #f0f0f0
+set_from_resource $color1 i3wm.color1 #f0f0f0
+set_from_resource $color2 i3wm.color2 #f0f0f0
+set_from_resource $color3 i3wm.color3 #f0f0f0
+set_from_resource $color4 i3wm.color4 #f0f0f0
+set_from_resource $color5 i3wm.color5 #f0f0f0
+set_from_resource $color6 i3wm.color6 #f0f0f0
+set_from_resource $color7 i3wm.color7 #f0f0f0
+set_from_resource $color8 i3wm.color8 #f0f0f0
+set_from_resource $color9 i3wm.color9 #f0f0f0
+set_from_resource $color10 i3wm.color10 #f0f0f0
+set_from_resource $color11 i3wm.color11 #f0f0f0
+set_from_resource $color12 i3wm.color12 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $color2 $color2 $fg  $color2   $color2
+client.focused_inactive $color3 $color3 $fg  $color3   $color3
+client.unfocused        $color8 $color8 $fg  $color8   $color8
+client.urgent           $color1 $color1 $fg  $color1   $color1
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 bar {
         status_command i3status
       	workspace_buttons yes
-      	mode hide
+      	mode dock
       	modifier Mod1
         font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 14px
         height 25
         colors {
-              background #3C4147
-              statusline #ffccff
-              separator #3C4147
+              background $bg
+              statusline $fg
+              separator $bg
               #                  border  backgr. text
-              focused_workspace  #660066 #660066 #ffccff
-              active_workspace   #5f676a #5f676a #ffccff
-              inactive_workspace #3C4147 #3C4147 #ffccff
-              urgent_workspace   #900000 #900000 #ffccff
+              focused_workspace  $color2 $color2 $fg
+              active_workspace   $color2 $color2 $fg
+              inactive_workspace $color3 $color3 $fg
+              urgent_workspace   $color1 $color1 $fg
      }
 }
 
@@ -105,10 +126,13 @@ bindsym $mod+Shift+n move up
 bindsym $mod+Shift+s move right
 
 # custom
-bindsym $mod+f exec pcmanfm
+bindsym $mod+f exec --no-startup-id urxvt -e ranger
 bindsym $mod+j mode "focus"
+exec --no-startup-id urxvt
 bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # Windows
 set $ws1 "1"

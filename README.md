@@ -12,6 +12,7 @@ Dependencies:
 * [Apple Color Emoji font](https://www.joypixels.com/downloadfonts) (put in .fonts)
 * ranger
 * pywal
+* gvim
 
 Interesting programs to explore:
 * projectm-pulseaudio - audio visualizer
