@@ -4,7 +4,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id xflux -z 02492
-exec --no-startup-id nitrogen --restore
 exec --no-startup-id wal -R
 exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
 exec_always ~/.screenlayout/default.sh
