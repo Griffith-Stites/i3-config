@@ -19,6 +19,3 @@ Interesting programs to explore:
 * cava - audio visualizer
 * franz - messaging service
 * https://github.com/lbforks/pipes.sh
-
-To do:
-* Replace xbindkeys with i3 commands
