@@ -6,6 +6,7 @@ exec --no-startup-id syncthing -no-browser
 exec --no-startup-id xflux -z 02492
 exec --no-startup-id imwheel -b 45
 exec --no-startup-id urxvt -e wal -R
+exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
 # exec_always ~/.screenlayout/default.sh
 # exec --no-startup-id urxvt -e sudo mount /dev/sda5 /run/media/maeve/1D80D4A75A2D1961/
 
@@ -177,3 +178,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod2+apostrophe exec pactl set-sink-volume @DEFAULT_SINK@ +1000
 bindsym $mod2+a exec pactl set-sink-volume @DEFAULT_SINK@ -1000
 bindsym $mod2+e exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# keybindings for music control
+bindsym $mod2+period exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous 
