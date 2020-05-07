@@ -6,7 +6,7 @@ exec --no-startup-id syncthing -no-browser
 exec --no-startup-id xflux -z 02492
 exec --no-startup-id imwheel -b 45
 exec --no-startup-id urxvt -e wal -R
-exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec qutebrowser'
 # exec_always ~/.screenlayout/default.sh
 # exec --no-startup-id urxvt -e sudo mount /dev/sda5 /run/media/maeve/1D80D4A75A2D1961/
 

@@ -55,4 +55,7 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 
 ## Audio visualizers
 * projectm-pulseaudio
-* cava 
+* cava
+
+## Browser
+* update in ~/.profile
