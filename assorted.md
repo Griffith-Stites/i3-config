@@ -59,3 +59,5 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 
 ## Browser
 * update in ~/.profile
+* update mimeapps.list
+* ~/.i3/config
