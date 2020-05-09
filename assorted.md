@@ -57,6 +57,9 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 * projectm-pulseaudio
 * cava
 
+## Qutebrowser pywal
+* https://gitlab.com/jjzmajic/qutewal
+
 ## Browser
 * update in ~/.profile
 * update mimeapps.list
