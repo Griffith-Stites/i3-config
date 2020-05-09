@@ -143,10 +143,11 @@ alias gh='cd ~/Documents/github/'
 alias ml='/usr/local/MATLAB/R2019b/bin/matlab'
 alias jl='jupyter lab'
 alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
-# redshift
-alias flux='redshift -l 42:-71'
+alias sy='cd ~/Documents/syncthing/'
+alias cl='cd ~/Documents/syncthing/school/classwork'
+
 # set default text editor
 export EDITOR='vim'
-export VISUAL='vim'
-
-export BROWSER='firefox'
+export VISUAL='atom'
+export BROWSER='qutebrowser.desktop'
+export PATH=$PATH:~/.local/bin
