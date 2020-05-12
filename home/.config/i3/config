@@ -1,14 +1,3 @@
-# Autostart
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id syncthing -no-browser
-exec --no-startup-id xflux -z 02492
-exec --no-startup-id wal -R
-exec --no-startup-id i3-msg 'workspace 1:Web; exec firefox'
-exec_always ~/.screenlayout/default.sh
-# exec --no-startup-id urxvt -e sudo mount /dev/sda5 /run/media/maeve/1D80D4A75A2D1961/
-
 # Aesthetics
 font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 
@@ -91,7 +80,6 @@ mode "resize" {
 
 # keybindings
 set $mod Mod4
-set $mod2 Mod1
 floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
@@ -118,6 +106,8 @@ bindsym $mod+t focus down; exec $movemouse
 bindsym $mod+n focus up; exec $movemouse
 bindsym $mod+s focus right; exec $movemouse
 
+focus_follows_mouse yes
+
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+t move down
@@ -127,7 +117,6 @@ bindsym $mod+Shift+s move right
 # custom
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
 bindsym $mod+j mode "focus"
-exec --no-startup-id urxvt
 bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
 bindsym $mod+Shift+minus move scratchpad
@@ -174,7 +163,27 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# keybindings for adjusting volume
-bindsym $mod2+apostrophe exec pactl set-sink-volume @DEFAULT_SINK@ +1000
-bindsym $mod2+a exec pactl set-sink-volume @DEFAULT_SINK@ -1000
-bindsym $mod2+e exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# bind programs to workspaces
+# assign [class="^qutebrowser$"] 1
+assign [class="^Mailspring$"] 3
+assign [class="^Franz$"] 3
+assign [class="^Notion$"] 2
+for_window [class="^Spotify$"] move container to workspace 3
+
+# Autostart
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id syncthing -no-browser
+exec --no-startup-id xflux -z 02492
+exec --no-startup-id urxvt -e wal -R
+exec_always ~/.screenlayout/default.sh
+
+# startup applications
+# exec --no-startup-id i3-msg 'workspace 1; exec qutebrowser'
+exec --no-startup-id qutebrowser
+exec --no-startup-id notion-app
+exec --no-startup-id mailspring
+exec --no-startup-id franz
+exec --no-startup-id spotify
