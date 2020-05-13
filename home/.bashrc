@@ -145,6 +145,7 @@ alias jl='jupyter lab'
 alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
 alias sy='cd ~/Documents/syncthing/'
 alias cl='cd ~/Documents/syncthing/school/classwork'
+alias b='bluetoothctl'
 
 # set default text editor
 export EDITOR='vim'
