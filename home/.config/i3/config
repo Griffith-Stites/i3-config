@@ -179,7 +179,10 @@ bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlay
 assign [class="^Mailspring$"] 3
 assign [class="^Franz$"] 3
 assign [class="^Notion$"] 2
-for_window [class="^Spotify$"] move container to workspace 3
+for_window [class="^Spotify$"] move container to workspace 5
+assign [class="^URxvt$"] 0
+assign [class="^Atom$"] 9
+assign [class="^Pavucontrol$"] 8
 
 # Autostart
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -196,4 +199,7 @@ exec --no-startup-id qutebrowser
 exec --no-startup-id notion-app
 exec --no-startup-id mailspring
 exec --no-startup-id franz
+exec --no-startup-id urxvt
 exec --no-startup-id spotify
+exec --no-startup-id atom
+exec --no-startup-id pavucontrol
