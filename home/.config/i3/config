@@ -80,6 +80,7 @@ mode "resize" {
 
 # keybindings
 set $mod Mod4
+set $mod2 Mod1
 floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
@@ -163,6 +164,15 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# keybindings for adjusting volume
+bindsym $mod2+apostrophe exec pactl set-sink-volume @DEFAULT_SINK@ +1000
+bindsym $mod2+a exec pactl set-sink-volume @DEFAULT_SINK@ -1000
+bindsym $mod2+e exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# keybindings for music control
+bindsym $mod2+period exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous 
 
 # bind programs to workspaces
 # assign [class="^qutebrowser$"] 1
