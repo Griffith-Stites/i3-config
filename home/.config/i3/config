@@ -1,4 +1,4 @@
-# Aesthetics
+[]# Aesthetics
 font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 
 for_window [class=".*"] border pixel 0
@@ -124,16 +124,16 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Windows
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1: Web"
+set $ws2 "2: Notes"
+set $ws3 "3: Comm"
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5: Music"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9: IDE"
+set $ws10 "10: Bash"
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -172,17 +172,17 @@ bindsym $mod2+e exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # keybindings for music control
 bindsym $mod2+period exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous 
+bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 # bind programs to workspaces
-# assign [class="^qutebrowser$"] 1
-assign [class="^Mailspring$"] 3
-assign [class="^Franz$"] 3
-assign [class="^Notion$"] 2
-for_window [class="^Spotify$"] move container to workspace 5
-assign [class="^URxvt$"] 0
-assign [class="^Atom$"] 9
-assign [class="^Pavucontrol$"] 8
+# assign [class="^qutebrowser$"] $ws1
+assign [class="^Mailspring$"] $ws3
+assign [class="^Franz$"] $ws3
+assign [class="^Notion$"] $ws2
+for_window [class="^Spotify$"] move container to workspace $ws8
+assign [class="^URxvt$"] $ws9
+assign [class="^Atom$"] $ws10
+assign [class="^Pavucontrol$"] $ws8
 
 # Autostart
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
