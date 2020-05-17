@@ -64,3 +64,6 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 * update in ~/.profile
 * update mimeapps.list
 * ~/.i3/config
+
+# Canon
+* cnijfilter-common 4.10-2
