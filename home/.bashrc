@@ -152,6 +152,3 @@ export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/atom'
 export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
-
-# Restore background at boot
-wal -R
