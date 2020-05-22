@@ -148,7 +148,10 @@ alias cl='cd ~/Documents/syncthing/school/classwork'
 alias b='bluetoothctl'
 
 # set default text editor
-export EDITOR='vim'
-export VISUAL='atom'
-export BROWSER='qutebrowser.desktop'
+export EDITOR='/usr/bin/vim'
+export VISUAL='/usr/bin/atom'
+export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
+
+# Restore background at boot
+wal -R
