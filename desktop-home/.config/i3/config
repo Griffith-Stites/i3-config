@@ -46,9 +46,9 @@ bar {
               separator $bg
               #                  border  backgr. text
               focused_workspace  $color2 $color2 $fg
-              active_workspace   $color2 $color2 $fg
+              active_workspace   $color3 $color3 $fg
               inactive_workspace $color3 $color3 $fg
-              urgent_workspace   $color1 $color1 $fg
+              urgent_workspace   $color3 $color3 $fg
      }
 }
 
@@ -193,7 +193,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id xflux -z 02492
 exec_always ~/.screenlayout/default.sh
-exec wal -R
+exec_always ~/.config/i3/pywal.sh
 
 # startup applications
 exec --no-startup-id i3-msg 'workspace $ws9; exec urxvt'
