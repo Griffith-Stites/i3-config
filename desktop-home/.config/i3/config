@@ -1,11 +1,3 @@
-# Autostart
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id syncthing -no-browser
-exec --no-startup-id xflux -z 02492
-exec --no-startup-id imwheel -b 45
-exec --no-startup-id urxvt -e wal -R
 exec --no-startup-id i3-msg 'workspace 1; exec qutebrowser'
 # exec_always ~/.screenlayout/default.sh
 # exec --no-startup-id urxvt -e sudo mount /dev/sda5 /run/media/maeve/1D80D4A75A2D1961/
@@ -182,4 +174,36 @@ bindsym $mod2+e exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # keybindings for music control
 bindsym $mod2+period exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous 
+bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+# bind programs to workspaces
+# assign [class="^qutebrowser$"] $ws1
+assign [class="^Mailspring$"] $ws3
+assign [class="^Franz$"] $ws3
+assign [class="^Notion$"] $ws2
+for_window [class="^Spotify$"] move container to workspace $ws8
+assign [class="^URxvt$"] $ws9
+assign [class="^Atom$"] $ws10
+assign [class="^Pavucontrol$"] $ws8
+
+# Autostart
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id syncthing -no-browser
+exec --no-startup-id xflux -z 02492
+exec --no-startup-id urxvt -e wal -R
+exec_always ~/.screenlayout/default.sh
+
+# startup applications
+# exec --no-startup-id i3-msg 'workspace 1; exec qutebrowser'
+exec --no-startup-id qutebrowser
+exec --no-startup-id notion-app
+exec --no-startup-id mailspring
+exec --no-startup-id franz
+exec --no-startup-id urxvt
+exec --no-startup-id spotify
+exec --no-startup-id atom
+exec --no-startup-id pavucontrol
+exec --no-startup-id urxvt -e wal -R
+exec --no-startup-id imwheel -b 45
