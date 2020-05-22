@@ -67,3 +67,4 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 
 # Canon
 * cnijfilter-common 4.10-2
+https://aur.archlinux.org/packages/cnijfilter2/
