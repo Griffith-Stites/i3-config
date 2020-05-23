@@ -46,9 +46,9 @@ bar {
               separator $bg
               #                  border  backgr. text
               focused_workspace  $color2 $color2 $fg
-              active_workspace   $color3 $color3 $fg
+              active_workspace   $color2 $color2 $fg
               inactive_workspace $color3 $color3 $fg
-              urgent_workspace   $color3 $color3 $fg
+              urgent_workspace   $color1 $color1 $fg
      }
 }
 
@@ -126,16 +126,16 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Windows
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1: Web"
+set $ws2 "2: Notes"
 set $ws3 "3"
-set $ws4 "4"
+set $ws4 "4: Comm"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws7 "7: Music"
+set $ws8 "8: Mail"
+set $ws9 "9: Bash"
+set $ws10 "10: IDE"
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -177,12 +177,10 @@ bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.Media
 bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 # bind programs to workspaces
-# assign [class="^qutebrowser$"] $ws1
 assign [class="^Mailspring$"] $ws8
 assign [class="^Franz$"] $ws4
 assign [class="^Notion$"] $ws2
 for_window [class="^Spotify$"] move container to workspace $ws7
-# assign [class="^URxvt$"] $ws9
 assign [class="^Atom$"] $ws10
 assign [class="^Pavucontrol$"] $ws7
 
@@ -192,17 +190,17 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id xflux -z 02492
+exec --no-startup-id imwheel -b 45
 exec_always ~/.screenlayout/default.sh
-exec_always ~/.config/i3/pywal.sh
+exec_always ~/.config/i3/startup.sh
 exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "fg" -cf "$fg" -nf "$fg" -fn "ypn envypn 12" -s -geometry "400x60-10+40" -format "<b>%s</b>\n%b" -shrink  -lto 3 -nto 5 -cto 0 -align "left" -transparency 0 -padding 8 -horizontal_padding 8
 
 # startup applications
 exec --no-startup-id i3-msg 'workspace $ws9; exec urxvt'
-exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
 exec --no-startup-id notion-app
 exec --no-startup-id mailspring
 exec --no-startup-id franz
 exec --no-startup-id spotify
 exec --no-startup-id atom
 exec --no-startup-id pavucontrol
-exec --no-startup-id imwheel -b 45
+exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
