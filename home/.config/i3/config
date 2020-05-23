@@ -125,8 +125,8 @@ bindsym $mod+minus scratchpad show
 # Windows
 set $ws1 "1: Web"
 set $ws2 "2: Notes"
-set $ws3 "3"
-set $ws4 "4: Comm"
+set $ws3 "3: Comm"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7: Music"
@@ -176,7 +176,7 @@ bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlay
 
 # bind programs to workspaces
 assign [class="^Mailspring$"] $ws8
-assign [class="^Franz$"] $ws4
+assign [class="^Franz$"] $ws3
 assign [class="^Notion$"] $ws2
 for_window [class="^Spotify$"] move container to workspace $ws7
 assign [class="^Atom$"] $ws10
