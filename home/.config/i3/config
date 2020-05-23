@@ -44,7 +44,7 @@ bar {
               focused_workspace  $color2 $color2 $fg
               active_workspace   $color3 $color3 $fg
               inactive_workspace $color3 $color3 $fg
-              urgent_workspace   $color3 $color3 $fg
+              urgent_workspace   $color1 $color1 $fg
      }
 }
 
