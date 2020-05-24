@@ -63,7 +63,9 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 ## Browser
 * update in ~/.profile
 * update mimeapps.list
-* ~/.i3/config
+* Use xdg-settings
+* Update BROWSER in bashrc
+* Make sure browser has desktop app in /usr/share/applications/, /usr/local/share/applications/, or ~/.local/share/applications/ 
 
 # Canon
 * cnijfilter-common 4.10-2
