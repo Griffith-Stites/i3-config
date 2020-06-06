@@ -13,6 +13,7 @@ Dependencies:
 * ranger
 * pywal
 * gvim
+* bluez-utils
 
 Interesting programs to explore:
 * projectm-pulseaudio - audio visualizer
