@@ -9,11 +9,13 @@
 Dependencies:
 * i3 gaps
 * Rofi
-* [Apple Color Emoji font](https://www.joypixels.com/downloadfonts) (put in .fonts)
 * ranger
 * pywal
 * gvim
 * bluez-utils
+* [Apple Color Emoji font](https://www.joypixels.com/downloadfonts) (put in .fonts)
+Optional:
+* R, RStudio
 
 Interesting programs to explore:
 * projectm-pulseaudio - audio visualizer
