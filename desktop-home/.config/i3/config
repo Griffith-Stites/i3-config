@@ -181,6 +181,7 @@ assign [class="^Notion$"] $ws2
 for_window [class="^Spotify$"] move container to workspace $ws7
 assign [class="^Atom$"] $ws10
 assign [class="^Pavucontrol$"] $ws7
+for_window [class="^RStudio$"] move container to workspace $ws10
 
 # Autostart
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
