@@ -146,6 +146,10 @@ alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgro
 alias sy='cd ~/Documents/syncthing/'
 alias cl='cd ~/Documents/syncthing/school/classwork'
 alias b='bluetoothctl'
+alias teamviewer='sudo systemctl start teamviewerd && /usr/bin/teamviewer' 
+alias sshnasroot='ssh root@136.61.220.201 -L 15443:136.61.220.201:80 -p 3000'
+alias sshnasmaeve='ssh 136.61.220.201 -L 15443:136.61.220.201:80 -p 3000'
+alias media='sshfs maeve@136.61.220.201:/mnt/nas1/media ~/mnt/media -p 3000 -C'
 
 # set default text editor
 export EDITOR='/usr/bin/vim'
