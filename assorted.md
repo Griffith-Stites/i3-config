@@ -65,8 +65,16 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 * update mimeapps.list
 * Use xdg-settings
 * Update BROWSER in bashrc
-* Make sure browser has desktop app in /usr/share/applications/, /usr/local/share/applications/, or ~/.local/share/applications/ 
+* Make sure browser has desktop app in /usr/share/applications/, /usr/local/share/applications/, or ~/.local/share/applications/
 
-# Canon
+## Canon
 * cnijfilter-common 4.10-2
 https://aur.archlinux.org/packages/cnijfilter2/
+
+## Pass
+* Password manager
+* init: pass -p SYNCTHING FOLDER init "KEY HERE"
+  * This key should match the key name generated using gpg2 --generate-key
+* Use lastpsas key
+* pass Update
+* upass - interactive environment w/ search
