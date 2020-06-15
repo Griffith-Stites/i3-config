@@ -150,12 +150,12 @@ alias sy='cd ~/Documents/syncthing/'
 alias cl='cd ~/Documents/syncthing/school/classwork'
 alias b='bluetoothctl'
 alias teamviewer='sudo systemctl start teamviewerd && /usr/bin/teamviewer'
-alias sshnasroot='ssh root@136.61.220.201 -L 15443:136.61.220.201:80 -p 3000'
-alias sshnasmaeve='ssh 136.61.220.201 -L 15443:136.61.220.201:80 -p 3000'
+alias sshnasroot='ssh root@136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
+alias sshnasmaeve='ssh 136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
 alias media='sshfs maeve@136.61.220.201:/mnt/nas1/media ~/mnt/media -p 3000 -C'
-
+alias vpn='sy && cd personal/.homevpninfo && echo "Run <sudo openvpn maeveGateway.conf>"'
 # set default text editor
 export EDITOR='/usr/bin/vim'
-export VISUAL='/usr/bin/atom'
+export VISUAL='/usr/bin/vim'
 export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
