@@ -11,11 +11,11 @@ Dependencies:
 * Rofi
 * ranger
 * pywal
-* gvim
 * bluez-utils
 * [Apple Color Emoji font](https://www.joypixels.com/downloadfonts) (put in .fonts)
 Optional:
 * R, RStudio
+* gvim, packages: 
 
 Interesting programs to explore:
 * projectm-pulseaudio - audio visualizer
