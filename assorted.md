@@ -78,3 +78,9 @@ https://aur.archlinux.org/packages/cnijfilter2/
 * Use lastpsas key
 * pass Update
 * upass - interactive environment w/ search
+
+## Grub custimization
+* Use grub custimizer
+* themes can be downloaded and placed in /boot/grub/themes (must run sudo -s first)
+* themes/backgrounds can be selected in /etc/default/grub
+* backup created by grub customizer can be found in /etc/grub.d/backup/
