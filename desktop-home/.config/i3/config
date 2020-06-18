@@ -3,9 +3,9 @@ font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 
 for_window [class=".*"] border pixel 0
 gaps inner 10
-gaps outer 150
-# gaps vertical 100 
-# gaps horizontal 20
+# gaps outer 280
+gaps vertical 300
+gaps horizontal 400
 
 set_from_resource $bg i3wm.background #f0f0f0
 set_from_resource $fg i3wm.foreground #f0f0f0
@@ -82,10 +82,10 @@ mode "gaps" {
         bindsym $mod2+Down gaps vertical current plus 50
         bindsym $mod2+Up gaps vertical current minus 50
 	bindsym $mod2+Right gaps horizontal current plus 50
-	
+
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
-	bindsym $mod+g mode "default" 
+	bindsym $mod+g mode "default"
 }
 
 mode "resize" {
