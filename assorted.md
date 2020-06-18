@@ -91,3 +91,7 @@ Transferring keys:
 * themes can be downloaded and placed in /boot/grub/themes (must run sudo -s first)
 * themes/backgrounds can be selected in /etc/default/grub
 * backup created by grub customizer can be found in /etc/grub.d/backup/
+
+## Mount drives /etc/fstab for user access
+* UUID=e7591c8c-f950-4d77-bb0f-13299b9e32fc /home/maeve/Documents/extStorage auto exec,nodev,nofail 0 2
+* Check permissions (ls -l)
