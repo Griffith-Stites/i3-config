@@ -63,7 +63,8 @@ https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
 ## Browser
 * update in ~/.profile
 * update mimeapps.list
-* Use xdg-settings
+* Use xdg-settings (eg xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop)
+  * Can clear browser with unset browser
 * Update BROWSER in bashrc
 * Make sure browser has desktop app in /usr/share/applications/, /usr/local/share/applications/, or ~/.local/share/applications/
 

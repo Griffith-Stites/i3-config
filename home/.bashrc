@@ -157,5 +157,5 @@ alias vpn='sy && cd personal/.homevpninfo && echo "Run <sudo openvpn maeveGatewa
 # set default text editor
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
-export BROWSER='/usr/bin/qutebrowser'
+# export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
