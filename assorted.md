@@ -79,6 +79,12 @@ https://aur.archlinux.org/packages/cnijfilter2/
 * Use lastpsas key
 * pass Update
 * upass - interactive environment w/ search
+Transferring keys:
+* "No assurance this key belongs to the named user":
+  * gpg --edit-key <KEY_ID>
+  * gpg> trust
+  * 5
+  * From: https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user
 
 ## Grub custimization
 * Use grub custimizer
