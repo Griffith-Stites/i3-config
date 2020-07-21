@@ -172,11 +172,14 @@ workspace $ws8 gaps vertical 450
 
 mode "gaps" {
         # current workspace
-        bindsym 1 gaps outer current set $outer1
-        bindsym 2 gaps outer current set $outer2
-        bindsym 3 gaps outer current set $outer3
-        bindsym 4 gaps horizontal current set $outer4
-        bindsym 5 gaps horizontal current set $outer5
+        bindsym 1 gaps horizontal current set 0
+        bindsym 2 gaps horizontal current set $outer3
+        bindsym 3 gaps horizontal current set $outer4
+        bindsym 4 gaps horizontal current set $outer5
+
+        bindsym a gaps vertical current set 0
+        bindsym o gaps vertical current set $outer2
+        bindsym e gaps vertical current set $outer3
 
         bindsym h gaps horizontal current minus $gapAdj
         bindsym t gaps vertical current plus $gapAdj
@@ -189,12 +192,6 @@ mode "gaps" {
 	      bindsym Right gaps horizontal current plus $gapAdj
 
         # all workspace
-        bindsym $mod2+1 gaps outer all set $outer1
-        bindsym $mod2+2 gaps outer all set $outer2
-        bindsym $mod2+3 gaps outer all set $outer3
-        bindsym $mod2+5 gaps horizontal all set $outer4
-        bindsym $mod2+6 gaps horizontal all set $outer5
-
         bindsym $mod2+h gaps horizontal all minus $gapAdj
         bindsym $mod2+t gaps vertical all plus $gapAdj
         bindsym $mod2+n gaps vertical all minus $gapAdj
