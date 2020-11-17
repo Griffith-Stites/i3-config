@@ -9,5 +9,3 @@ xfce4-power-manager
 syncthing -no-browser
 redshift
 imwheel -b 45
-xfce4-power-manager
-clipit
