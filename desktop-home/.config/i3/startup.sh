@@ -7,5 +7,5 @@ redshift
 nm-applet
 xfce4-power-manager
 syncthing -no-browser
-redshift
+redshift -t 6500:3500
 imwheel -b 45

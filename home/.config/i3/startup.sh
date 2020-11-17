@@ -7,7 +7,7 @@ redshift
 nm-applet
 xfce4-power-manager
 syncthing -no-browser
-redshift
+redshift -t 6500:4000
 imwheel -b 45
 xfce4-power-manager
 clipit
