@@ -226,6 +226,7 @@ bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlay
 
 # bind programs to workspaces
 assign [class="^Mailspring$"] $ws8
+assign [class="^Signal$"] $ws3
 assign [class="^Franz$"] $ws3
 assign [class="^Notion$"] $ws2
 for_window [class="^Spotify$"] move container to workspace $ws7
@@ -234,7 +235,8 @@ assign [class="^Pavucontrol$"] $ws7
 
 # Autostart
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm_applet
+exec --no-startup-id nm-applet
+exec --no-startup-id signal-desktop
 exec_always ~/.screenlayout/default.sh
 exec_always ~/.config/i3/startup.sh
 exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "fg" -cf "$fg" -nf "$fg" -fn "ypn envypn 12" -s -geometry "400x60-10+40" -format "<b>%s</b>\n%b" -shrink  -lto 3 -nto 5 -cto 0 -align "left" -transparency 0 -padding 8 -horizontal_padding 8
