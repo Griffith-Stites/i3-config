@@ -43,7 +43,7 @@ bar {
      }
 }
 
-mode "focus" {
+mode "Focus" {
         # These bindings trigger as soon as you enter the focus mode
         bindsym s floating enable, resize set 1000 1000, move position center
         bindsym m floating enable, resize set 1600 1600, move position center
@@ -56,7 +56,7 @@ mode "focus" {
         bindsym space mode "default"
 }
 
-mode "resize" {
+mode "Resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym t resize grow height 10 px or 10 ppt
         bindsym n resize shrink height 10 px or 10 ppt
@@ -80,7 +80,6 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+apostrophe kill
-bindsym $mod+p mode "resize"
 
 # restarting
 bindsym $mod+Shift+j reload
@@ -106,15 +105,19 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+t move down
 bindsym $mod+Shift+n move up
 bindsym $mod+Shift+s move right
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# modes
+bindsym $mod+p mode "resize"
+bindsym $mod+j mode "Focus"
+bindsym $mod+g mode "Gaps"
+bindsym $mod+Shift+g mode "Gaps Universal"
 
 # custom
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
-bindsym $mod+j mode "focus"
-bindsym $mod+g mode "gaps"
 bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
 
 # Windows
 set $ws1 "1: Web"
@@ -170,41 +173,66 @@ workspace $ws1 gaps horizontal $outer4
 workspace $ws2 gaps horizontal $outer4
 workspace $ws8 gaps vertical 450
 
-mode "gaps" {
-        # current workspace
+mode "Gaps" { # CURRENT WORKSPACE #
+        # preset horizontal
         bindsym 1 gaps horizontal current set 0
         bindsym 2 gaps horizontal current set $outer3
         bindsym 3 gaps horizontal current set $outer4
         bindsym 4 gaps horizontal current set $outer5
 
-        bindsym a gaps vertical current set 0
-        bindsym o gaps vertical current set $outer2
-        bindsym e gaps vertical current set $outer3
+        bindsym $mod+1 gaps right current set 0 # offset horizontal
 
+        # preset vertical
+        bindsym apostrophe gaps vertical current set 0
+        bindsym comma gaps vertical current set $outer2
+        bindsym period gaps vertical current set $outer3
+
+        # fine adjustment
         bindsym h gaps horizontal current minus $gapAdj
         bindsym t gaps vertical current plus $gapAdj
         bindsym n gaps vertical current minus $gapAdj
-	      bindsym s gaps horizontal current plus $gapAdj
+        bindsym s gaps horizontal current plus $gapAdj
 
         bindsym Left gaps horizontal current minus $gapAdj
         bindsym Down gaps vertical current plus $gapAdj
         bindsym Up gaps vertical current minus $gapAdj
-	      bindsym Right gaps horizontal current plus $gapAdj
+        bindsym Right gaps horizontal current plus $gapAdj
 
-        # all workspace
-        bindsym $mod2+h gaps horizontal all minus $gapAdj
-        bindsym $mod2+t gaps vertical all plus $gapAdj
-        bindsym $mod2+n gaps vertical all minus $gapAdj
-	      bindsym $mod2+s gaps horizontal all plus $gapAdj
+        #exit
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+}
 
-        bindsym $mod2+Left gaps horizontal all minus $gapAdj
-        bindsym $mod2+Down gaps vertical all plus $gapAdj
-        bindsym $mod2+Up gaps vertical all minus $gapAdj
-	      bindsym $mod2+Right gaps horizontal all plus $gapAdj
+mode "Gaps Universal" { # ALL WORKSPACE #
+        # preset horizontal
+        bindsym 1 gaps horizontal all set 0
+        bindsym 2 gaps horizontal all set $outer3
+        bindsym 3 gaps horizontal all set $outer4
+        bindsym 4 gaps horizontal all set $outer5
 
-	      bindsym Return mode "default"
-	      bindsym Escape mode "default"
-	      bindsym $mod+g mode "default"
+        bindsym $mod+1 gaps right all set 0 # offset horizontal
+
+        # preset vertical
+        bindsym apostrophe gaps vertical all set 0
+        bindsym comma gaps vertical all set $outer2
+        bindsym period gaps vertical all set $outer3
+
+        # fine adjustment
+        bindsym h gaps horizontal all minus $gapAdj
+        bindsym t gaps vertical all plus $gapAdj
+        bindsym n gaps vertical all minus $gapAdj
+        bindsym s gaps horizontal all plus $gapAdj
+
+        bindsym Left gaps horizontal all minus $gapAdj
+        bindsym Down gaps vertical all plus $gapAdj
+        bindsym Up gaps vertical all minus $gapAdj
+        bindsym Right gaps horizontal all plus $gapAdj
+
+        #exit
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
 }
 
 # Use pactl to adjust volume in PulseAudio.
