@@ -1,12 +1,3 @@
-## Mount home server
-1. Install davfs2
-2. sudo mkdir /mnt/homeNAS/
-3. sudo mount -t davfs -o noexec http://136.61.220.201:1000/syncthing/ /mnt/homeNAS/
-4. Enter credentials
-
-## Time Setting
-https://www.tecmint.com/synchronize-time-with-ntp-in-linux/
-
 ## Greenfoot
 * Download Java8 JDK and JRE
   * Oracle versions with javafx
@@ -86,8 +77,8 @@ Transferring keys:
   * 5
   * From: https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user
 
-## Grub custimization
-* Use grub custimizer
+## Grub customization
+* Use grub customizer
 * themes can be downloaded and placed in /boot/grub/themes (must run sudo -s first)
 * themes/backgrounds can be selected in /etc/default/grub
 * backup created by grub customizer can be found in /etc/grub.d/backup/
