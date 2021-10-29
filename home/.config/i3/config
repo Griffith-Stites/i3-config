@@ -182,9 +182,10 @@ assign [class="^Mailspring$"] $ws8
 # for_window [class="^Signal$"] move container to workspace $ws3
 assign [class="^Signal$"] $ws3
 assign [class="^Franz$"] $ws3
-assign [class="^Notion$"] $ws2
+#assign [class="^Notion$"] $ws2
+for_window [class = "^Notion$"] move container to workspace $ws2
 for_window [class="^Spotify$"] move container to workspace $ws7
-assign [class="^Atom$"] $ws10
+assign [class="^Code$"] $ws10
 assign [class="^Pavucontrol$"] $ws7
 
 # Autostart
@@ -204,6 +205,7 @@ exec --no-startup-id notion-app
 exec --no-startup-id mailspring
 exec --no-startup-id franz
 exec --no-startup-id spotify
-exec --no-startup-id atom
+exec --no-startup-id code
 exec --no-startup-id pavucontrol
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
