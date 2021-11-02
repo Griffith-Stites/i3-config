@@ -254,11 +254,13 @@ bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlay
 
 # bind programs to workspaces
 assign [class="^Mailspring$"] $ws8
+# for_window [class="^Signal$"] move container to workspace $ws3
 assign [class="^Signal$"] $ws3
 assign [class="^Franz$"] $ws3
-assign [class="^Notion$"] $ws2
+#assign [class="^Notion$"] $ws2
+for_window [class = "^Notion$"] move container to workspace $ws2
 for_window [class="^Spotify$"] move container to workspace $ws7
-assign [class="^Atom$"] $ws10
+assign [class="^Code$"] $ws10
 assign [class="^Pavucontrol$"] $ws7
 
 # Autostart
@@ -266,9 +268,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id signal-desktop
 exec --no-startup-id xfce4-power-manager
-exec_always ~/.screenlayout/default.sh
+exec --no-startup-id syncthing -no-browser
+exec --no-startup-id clipit
 exec_always ~/.config/i3/startup.sh
 exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "fg" -cf "$fg" -nf "$fg" -fn "ypn envypn 12" -s -geometry "400x60-10+40" -format "<b>%s</b>\n%b" -shrink  -lto 3 -nto 5 -cto 0 -align "left" -transparency 0 -padding 8 -horizontal_padding 8
+exec_always ~/.screenlayout/default.sh
 
 # startup applications
 exec --no-startup-id i3-msg 'workspace $ws9; exec urxvt'
@@ -276,6 +280,7 @@ exec --no-startup-id notion-app
 exec --no-startup-id mailspring
 exec --no-startup-id franz
 exec --no-startup-id spotify
-exec --no-startup-id atom
+exec --no-startup-id code
 exec --no-startup-id pavucontrol
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
