@@ -109,7 +109,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # modes
-bindsym $mod+p mode "resize"
+bindsym $mod+p mode "Resize"
 bindsym $mod+j mode "Focus"
 bindsym $mod+g mode "Gaps"
 bindsym $mod+Shift+g mode "Gaps Universal"
