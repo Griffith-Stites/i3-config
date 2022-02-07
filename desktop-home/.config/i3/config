@@ -160,15 +160,15 @@ workspace_layout stacking
 # gaps
 for_window [class=".*"] border pixel 0
 set $outer1 100
-set $outer2 250
-set $outer3 400
-set $outer4 700
+set $outer2 275
+set $outer3 500
+set $outer4 800
 set $outer5 1000
 set $gapAdj 50
 
 gaps inner 10
-gaps vertical $outer3
-gaps horizontal $outer5
+gaps vertical $outer2
+gaps horizontal $outer4
 workspace $ws1 gaps horizontal $outer4
 workspace $ws2 gaps horizontal $outer4
 workspace $ws8 gaps vertical 450
@@ -176,18 +176,20 @@ workspace $ws8 gaps vertical 450
 mode "Gaps" { # CURRENT WORKSPACE #
         # preset horizontal
         bindsym 1 gaps horizontal current set 0
-        bindsym 2 gaps horizontal current set $outer3
-        bindsym 3 gaps horizontal current set $outer4
-        bindsym 4 gaps horizontal current set $outer5
+        bindsym 2 gaps horizontal current set $outer2
+        bindsym 3 gaps horizontal current set $outer3
+        bindsym 4 gaps horizontal current set $outer4
 
         # offset horizontal
-        bindsym $mod+1 gaps left current set 35 
-        bindsym $mod+2 gaps right current set 35
+        bindsym $mod+1 gaps left current set 10 
+        bindsym $mod+2 gaps right current set 10
 
         # preset vertical
         bindsym apostrophe gaps vertical current set 0
-        bindsym comma gaps vertical current set $outer2
+        bindsym comma gaps vertical current set $outer1
         bindsym period gaps vertical current set $outer3
+        bindsym p gaps top current set 750
+        bindsym y gaps bottom current set 25
 
         # fine adjustment
         bindsym h gaps horizontal current minus $gapAdj
@@ -257,7 +259,7 @@ bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.Media
 bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 # bind programs to workspaces
-assign [class="^Mailspring$"] $ws8
+assign [class="^Thunderbird$"] $ws8
 # for_window [class="^Signal$"] move container to workspace $ws3
 assign [class="^Signal$"] $ws3
 assign [class="^Franz$"] $ws3
@@ -275,6 +277,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id clipit
 exec_always pactl set-source-volume @DEFAULT_SOURCE@ 65000     # set mic volume to 100%
+exec_always pactl set-default-sink alsa_output.usb-Schiit_Audio_Schiit_Modi_3_-00.analog-stereo
 exec_always ~/.config/i3/startup.sh
 exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "fg" -cf "$fg" -nf "$fg" -fn "ypn envypn 12" -s -geometry "400x60-10+40" -format "<b>%s</b>\n%b" -shrink  -lto 3 -nto 5 -cto 0 -align "left" -transparency 0 -padding 8 -horizontal_padding 8
 exec_always ~/.screenlayout/default.sh
@@ -282,7 +285,7 @@ exec_always ~/.screenlayout/default.sh
 # startup applications
 exec --no-startup-id i3-msg 'workspace $ws9; exec urxvt'
 exec --no-startup-id notion-app
-exec --no-startup-id mailspring
+exec --no-startup-id thunderbird
 exec --no-startup-id franz
 exec --no-startup-id spotify
 exec --no-startup-id code
