@@ -143,7 +143,7 @@ ex ()
 
 # My aliases
 alias gh='cd ~/Documents/github/'
-alias ml='/usr/local/MATLAB/R2019b/bin/matlab'
+alias ml='/usr/local/MATLAB/R2020a/bin/matlab'
 alias jl='jupyter lab'
 alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
 alias sy='cd ~/Documents/syncthing/'
@@ -154,16 +154,13 @@ alias sshnasroot='ssh root@136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
 alias sshnasmaeve='ssh 136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
 alias media='sshfs maeve@136.61.220.201:/mnt/nas1/media ~/mnt/media -p 3000 -C'
 alias vpn='sy && cd personal/.homevpninfo && echo "Run <sudo openvpn maeveGateway.conf>"'
-alias dark="xrandr --output eDP1 --brightness .5"
+alias nord='cd /etc/openvpn/ovpn_tcp && ls && echo "Run <sudo openvpn NORDVPN FILE> - SEE nordvpn.com/servers/tools for recommended server"'
 # set default text editor
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
-export BROWSER='/usr/bin/qutebrowser'
+# export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
 source ~/.config/ca-dock-setup.sh
-# Binds
-bind '"\e[24~":"sudo ~/scripts/pointersRestart.sh\n"'
-# Pass (used in generating passwords)
 export PASSWORD_STORE_CHARACTER_SET='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789!#$%&()*+,-./:;=?@^_|~"'
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789'
 export PASSWORD_STORE_GENERATED_LENGTH='18'
