@@ -179,7 +179,7 @@ mode "Gaps" { # CURRENT WORKSPACE #
         bindsym 2 gaps horizontal current set $outer2
         bindsym 3 gaps horizontal current set $outer3
         bindsym 4 gaps horizontal current set $outer4
-
+        bindsym 5 gaps horizontal current set $outer5
         # offset horizontal
         bindsym $mod+1 gaps left current set 10 
         bindsym $mod+2 gaps right current set 10
@@ -187,9 +187,9 @@ mode "Gaps" { # CURRENT WORKSPACE #
         # preset vertical
         bindsym apostrophe gaps vertical current set 0
         bindsym comma gaps vertical current set $outer1
-        bindsym period gaps vertical current set $outer3
-        bindsym p gaps top current set 750
-        bindsym y gaps bottom current set 25
+        bindsym period gaps vertical current set 200
+        bindsym p gaps vertical current set 320
+        bindsym y gaps vertical current set 420
 
         # fine adjustment
         bindsym h gaps horizontal current minus $gapAdj
