@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=R2021b
+Type=Application
+Terminal=false
+MimeType=text/x-matlab
+Exec=/usr/local/MATLAB/R2021b/bin/matlab -cefdisablegpu -desktop
+Name=MATLAB
+Icon=matlab
+Categories=Development;Math;Science
+Comment=Scientific computing environment
+StartupNotify=true

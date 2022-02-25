@@ -143,7 +143,6 @@ ex ()
 
 # My aliases
 alias gh='cd ~/Documents/github/'
-alias ml='/usr/local/MATLAB/R2020a/bin/matlab'
 alias jl='jupyter lab'
 alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
 alias sy='cd ~/Documents/syncthing/'
