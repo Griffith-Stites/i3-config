@@ -15,6 +15,8 @@ echo -e "\nBatch 4: inkscape, transmission-gtk, atom, openvpn, sshfs, python-adb
 sudo pacman -Su inkscape transmission-gtk atom openvpn sshfs python-adblock pavucontrol scrot
 echo -e "\nBatch 5: redshift, atril, ttf_apple_emoji, bash-completion, thunderbird, clipit, speedtest-cli\n"
 sudo pacman -Su redshift atril ttf_apple_emoji bash-completion thunderbird clipit speedtest-cli
+echo -e "\nBatch 6: xmodmap"
+sudo pacman -Su xorg-xmodmap
 
 ## YAY
 echo -e "\nSwitching to AUR installs via 'yay' AUR helper\n"
