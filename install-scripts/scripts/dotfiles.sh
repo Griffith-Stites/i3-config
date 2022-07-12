@@ -15,9 +15,11 @@ else
   exit
 fi
 
-echo -e "\nInstalling root files from GitHub"
-echo -e "MATLAB:\n"
-\cp -r ~/Downloads/linux-config/usr/share/applications/. /usr/share/applications/.
-echo -e "Keyboard:\n"
-mv ~/Downloads/linux-config/keyboard/us /usr/share/X11/xkb/symbols/us
-mv ~/Downloads/linux-config/keyboard/pc /usr/share/X11/xkb/symbols/pc
+echo -ne "Auto install root files [y, n]?"
+read x
+if [ $x == "y" ]; then
+  echo -e "\nInstalling root files from GitHub"
+  \cp -r ~/Downloads/linux-config/system/. /.
+else
+  exit
+fi
