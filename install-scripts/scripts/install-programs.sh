@@ -3,7 +3,7 @@ echo -e "\nStarting Maeve's install script for Manjaro systems \n"
 echo -e "\nUpdating OS:"
 pacman -Syu 				# system update 
 echo -e "\nFinished updating OS."
-echo -e "\nUNINSTALL pre-packaged programs:"
+echo -e "\nUNINSTALL pre-packaged programs [palemoon-bin, mousepad, hexchat, deluge, epdfview, xviewer]:"
 sudo pacman -R palemoon-bin mousepad hexchat deluge epdfview xviewer
 
 # Installer
