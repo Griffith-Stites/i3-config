@@ -14,14 +14,14 @@ if [ $x == 1 ]; then
   echo -e "\nStarting pacman installs:"
   sudo pacman -Su qutebrowser pass rofi ranger python-pywal r bluez trash-cli bluez-utils pulseaudio pulseaudio-bluetooth jupyterlab python syncthing firefox chromium libreoffice-fresh gimp pdfarranger inkscape transmission-gtk openvpn sshfs python-adblock pavucontrol scrot redshift atril ttf_apple_emoji bash-completion thunderbird clipit speedtest-cli gvim evince
   echo -e "\nSwitching to AUR installs via 'yay' AUR helper:"
-  yay -Su franz-bin rstudio-desktop-bin spotify notion-app chromium-widevine zoom logiops nordvpn-bin pulseffects-legacy-git
+  yay -Su franz-bin rstudio-desktop-bin spotify notion-app chromium-widevine zoom logiops nordvpn-bin pulseffects-legacy
 
 elif [ $x == 2 ]; then
   echo "Minimal install"
   echo -e "\nStarting pacman installs:"
   sudo pacman -Su qutebrowser pass rofi ranger python-pywal r bluez trash-cli bluez-utils pulseaudio pulseaudio-bluetooth python syncthing firefox chromium gimp pdfarranger openvpn sshfs python-adblock pavucontrol scrot redshift atril ttf_apple_emoji bash-completion thunderbird clipit speedtest-cli gvim evince
   echo -e "\nSwitching to AUR installs via 'yay' AUR helper:"
-  yay -Su franz-bin spotify notion-app chromium-widevine zoom logiops nordvpn-bin pulseffects-legacy-git
+  yay -Su franz-bin spotify notion-app chromium-widevine zoom logiops nordvpn-bin pulseffects-legacy
  
 else
   echo "ERROR: Number not in selection range. Exiting install"

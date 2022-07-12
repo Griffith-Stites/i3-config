@@ -166,6 +166,8 @@ set $outer4 800
 set $outer5 1000
 set $gapAdj 50
 
+set $def_hor 800
+
 gaps inner 10
 gaps vertical $outer2
 gaps horizontal $outer4
@@ -174,24 +176,29 @@ workspace $ws2 gaps horizontal $outer4
 workspace $ws8 gaps vertical 450
 
 mode "Gaps" { # CURRENT WORKSPACE #
-        # preset horizontal
+        ## Presets
+        bindsym u gaps outer current set 0; gaps inner current set  0
+        bindsym e gaps horizontal current set $outer4; gaps vertical current set 450; gaps inner current set 10
+
+        ## Preset horizontal
         bindsym 1 gaps horizontal current set 0
         bindsym 2 gaps horizontal current set $outer2
         bindsym 3 gaps horizontal current set $outer3
         bindsym 4 gaps horizontal current set $outer4
         bindsym 5 gaps horizontal current set $outer5
-        # offset horizontal
+
+        # offset modes
         bindsym $mod+1 gaps left current set 10 
         bindsym $mod+2 gaps right current set 10
 
-        # preset vertical
+        # Present vertical
         bindsym apostrophe gaps vertical current set 0
         bindsym comma gaps vertical current set $outer1
         bindsym period gaps vertical current set 200
         bindsym p gaps vertical current set 320
         bindsym y gaps vertical current set 420
 
-        # fine adjustment
+        # Fine adjustment
         bindsym h gaps horizontal current minus $gapAdj
         bindsym t gaps vertical current plus $gapAdj
         bindsym n gaps vertical current minus $gapAdj
@@ -202,14 +209,14 @@ mode "Gaps" { # CURRENT WORKSPACE #
         bindsym Up gaps vertical current minus $gapAdj
         bindsym Right gaps horizontal current plus $gapAdj
 
-        #exit
+        # Exit
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+g mode "default"
 }
 
 mode "Gaps Universal" { # ALL WORKSPACE #
-        # preset horizontal
+        # Preset horizontal
         bindsym 1 gaps horizontal all set 0
         bindsym 2 gaps horizontal all set $outer3
         bindsym 3 gaps horizontal all set $outer4
@@ -217,12 +224,12 @@ mode "Gaps Universal" { # ALL WORKSPACE #
 
         bindsym $mod+1 gaps right all set 0 # offset horizontal
 
-        # preset vertical
+        # Preset vertical
         bindsym apostrophe gaps vertical all set 0
         bindsym comma gaps vertical all set $outer2
         bindsym period gaps vertical all set $outer3
 
-        # fine adjustment
+        # Fine adjustment
         bindsym h gaps horizontal all minus $gapAdj
         bindsym t gaps vertical all plus $gapAdj
         bindsym n gaps vertical all minus $gapAdj
@@ -233,7 +240,7 @@ mode "Gaps Universal" { # ALL WORKSPACE #
         bindsym Up gaps vertical all minus $gapAdj
         bindsym Right gaps horizontal all plus $gapAdj
 
-        #exit
+        # Exit
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+g mode "default"
@@ -259,11 +266,13 @@ bindsym $mod2+comma exec urxvt -e dbus-send --print-reply --dest=org.mpris.Media
 bindsym $mod2+o exec urxvt -e dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 # bind programs to workspaces
-for_window [class = "^Notion$"] move container to workspace $ws2
+# for_window [class = "^Notion$"] move container to workspace $ws2
+assign [class="^Notion$"] $ws2
 assign [class="^Signal$"] $ws3
 assign [class="^Franz$"] $ws3
 for_window [class="^Spotify$"] move container to workspace $ws7
 assign [class="^Pavucontrol$"] $ws7
+assign [class="^Pulseeffects"] $ws7
 
 # Autostart
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -285,5 +294,6 @@ exec --no-startup-id spotify
 exec --no-startup-id franz
 exec --no-startup-id signal-desktop
 exec --no-startup-id pavucontrol
+exec --no-startup-id pulseeffects
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent #start gps for use on redshift
