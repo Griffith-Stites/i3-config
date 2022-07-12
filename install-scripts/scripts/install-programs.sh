@@ -23,6 +23,9 @@ elif [ $x == 2 ]; then
   echo -e "\nSwitching to AUR installs via 'yay' AUR helper:"
   yay -Su franz-bin spotify notion-app chromium-widevine zoom nordvpn-bin pulseffects-legacy
  
+elif [ $x == 3 ]; then
+  echo "Exiting Install"
+  exit
 else
   echo "ERROR: Number not in selection range. Exiting install"
   exit
