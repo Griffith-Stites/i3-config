@@ -162,7 +162,6 @@ export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
 # export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
-source ~/.config/ca-dock-setup.sh
 export PASSWORD_STORE_CHARACTER_SET='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789!#$%&()*+,-./:;=?@^_|~"'
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789'
 export PASSWORD_STORE_GENERATED_LENGTH='18'
