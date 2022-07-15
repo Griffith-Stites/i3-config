@@ -165,3 +165,6 @@ export PATH=$PATH:~/.local/bin
 export PASSWORD_STORE_CHARACTER_SET='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789!#$%&()*+,-./:;=?@^_|~"'
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789'
 export PASSWORD_STORE_GENERATED_LENGTH='18'
+
+alias rm='echo "This is not the command you are looking for."; false'
+# \rm for rm
