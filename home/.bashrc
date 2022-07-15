@@ -154,6 +154,9 @@ alias sshnasmaeve='ssh 136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
 alias media='sshfs maeve@136.61.220.201:/mnt/nas1/media ~/mnt/media -p 3000 -C'
 alias vpn='sy && cd personal/.homevpninfo && echo "Run <sudo openvpn maeveGateway.conf>"'
 alias nord='cd /etc/openvpn/ovpn_tcp && ls && echo "Run <sudo openvpn NORDVPN FILE> - SEE nordvpn.com/servers/tools for recommended server"'
+
+alias gr='cd ~/Documents/syncthing/github/summer2022/py_grama_fork'
+alias py="python"
 # set default text editor
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
