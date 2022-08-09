@@ -43,7 +43,7 @@ bar {
      }
 }
 
-mode "Focus" {
+mode "focus" {
         # These bindings trigger as soon as you enter the focus mode
         bindsym s floating enable, resize set 1000 1000, move position center
         bindsym m floating enable, resize set 1600 1600, move position center
@@ -56,7 +56,7 @@ mode "Focus" {
         bindsym space mode "default"
 }
 
-mode "Resize" {
+mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym t resize grow height 10 px or 10 ppt
         bindsym n resize shrink height 10 px or 10 ppt
@@ -90,7 +90,7 @@ workspace $ws1 gaps horizontal $outer4
 workspace $ws2 gaps horizontal $outer4
 workspace $ws8 gaps vertical 450
 
-mode "Gaps" {
+mode "gaps" {
         ## Presets
         bindsym u gaps outer current set 0; gaps inner current set  0
         bindsym e gaps horizontal current set $outer4; gaps vertical current set 450; gaps inner current set 10
@@ -167,10 +167,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # mode bindings
-bindsym $mod+p mode "Resize"
-bindsym $mod+j mode "Focus"
-bindsym $mod+g mode "Gaps"
-bindsym $mod+Shift+g mode "Gaps Universal"
+bindsym $mod+p mode "resize"
+bindsym $mod+j mode "focus"
+bindsym $mod+g mode "gaps"
 
 # custom
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
