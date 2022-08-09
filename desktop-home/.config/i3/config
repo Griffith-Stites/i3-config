@@ -90,7 +90,7 @@ workspace $ws1 gaps horizontal $outer4
 workspace $ws2 gaps horizontal $outer4
 workspace $ws8 gaps vertical 450
 
-mode "Gaps" { # CURRENT WORKSPACE #
+mode "Gaps" {
         ## Presets
         bindsym u gaps outer current set 0; gaps inner current set  0
         bindsym e gaps horizontal current set $outer4; gaps vertical current set 450; gaps inner current set 10
