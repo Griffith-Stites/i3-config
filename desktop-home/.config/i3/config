@@ -112,37 +112,6 @@ mode "Gaps" { # CURRENT WORKSPACE #
         bindsym $mod+g mode "default"
 }
 
-mode "Gaps Universal" { # ALL WORKSPACE #
-        # Preset horizontal
-        bindsym 1 gaps horizontal all set 0
-        bindsym 2 gaps horizontal all set $outer3
-        bindsym 3 gaps horizontal all set $outer4
-        bindsym 4 gaps horizontal all set $outer5
-
-        bindsym $mod+1 gaps right all set 0 # offset horizontal
-
-        # Preset vertical
-        bindsym apostrophe gaps vertical all set 0
-        bindsym comma gaps vertical all set $outer2
-        bindsym period gaps vertical all set $outer3
-
-        # Fine adjustment
-        bindsym h gaps horizontal all minus $gapAdj
-        bindsym t gaps vertical all plus $gapAdj
-        bindsym n gaps vertical all minus $gapAdj
-        bindsym s gaps horizontal all plus $gapAdj
-
-        bindsym Left gaps horizontal all minus $gapAdj
-        bindsym Down gaps vertical all plus $gapAdj
-        bindsym Up gaps vertical all minus $gapAdj
-        bindsym Right gaps horizontal all plus $gapAdj
-
-        # Exit
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+g mode "default"
-}
-
 # keybindings
 set $mod Mod4
 set $mod2 Mod1
