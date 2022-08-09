@@ -86,7 +86,6 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+apostrophe kill
-bindsym $mod+p mode "resize"
 
 # restarting
 bindsym $mod+Shift+j reload
@@ -114,14 +113,17 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+t move down
 bindsym $mod+Shift+n move up
 bindsym $mod+Shift+s move right
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# modes
+bindsym $mod+p mode "resize"
 
 # custom
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
 bindsym $mod+j mode "focus"
 bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
 
 # Windows
 set $ws1 "1: Web"
