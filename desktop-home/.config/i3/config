@@ -72,6 +72,24 @@ mode "Resize" {
         bindsym $mod+p mode "default"
 }
 
+# gaps
+for_window [class=".*"] border pixel 0
+set $outer1 100
+set $outer2 275
+set $outer3 500
+set $outer4 800
+set $outer5 1000
+set $gapAdj 50
+
+set $def_hor 800
+
+gaps inner 10
+gaps vertical $outer2
+gaps horizontal $outer4
+workspace $ws1 gaps horizontal $outer4
+workspace $ws2 gaps horizontal $outer4
+workspace $ws8 gaps vertical 450
+
 mode "Gaps" { # CURRENT WORKSPACE #
         ## Presets
         bindsym u gaps outer current set 0; gaps inner current set  0
@@ -196,24 +214,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 workspace_layout stacking
-
-# gaps
-for_window [class=".*"] border pixel 0
-set $outer1 100
-set $outer2 275
-set $outer3 500
-set $outer4 800
-set $outer5 1000
-set $gapAdj 50
-
-set $def_hor 800
-
-gaps inner 10
-gaps vertical $outer2
-gaps horizontal $outer4
-workspace $ws1 gaps horizontal $outer4
-workspace $ws2 gaps horizontal $outer4
-workspace $ws8 gaps vertical 450
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
