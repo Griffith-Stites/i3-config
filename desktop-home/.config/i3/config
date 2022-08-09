@@ -72,109 +72,6 @@ mode "Resize" {
         bindsym $mod+p mode "default"
 }
 
-# keybindings
-set $mod Mod4
-set $mod2 Mod1
-floating_modifier $mod
-bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+apostrophe kill
-
-# restarting
-bindsym $mod+Shift+j reload
-bindsym $mod+Shift+p restart
-bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# window layout
-bindsym $mod+d split h
-bindsym $mod+k split v
-bindsym $mod+u fullscreen toggle
-bindsym $mod+o layout stacking
-bindsym $mod+comma layout tabbed
-bindsym $mod+period layout toggle split
-
-set $movemouse "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
-bindsym $mod+h focus left; exec $movemouse
-bindsym $mod+t focus down; exec $movemouse
-bindsym $mod+n focus up; exec $movemouse
-bindsym $mod+s focus right; exec $movemouse
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+n move up
-bindsym $mod+Shift+s move right
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
-
-# modes
-bindsym $mod+p mode "Resize"
-bindsym $mod+j mode "Focus"
-bindsym $mod+g mode "Gaps"
-bindsym $mod+Shift+g mode "Gaps Universal"
-
-# custom
-bindsym $mod+f exec --no-startup-id urxvt -e ranger
-bindsym $mod+e exec rofi -show drun
-bindsym $mod+space exec rofi -show
-
-# Windows
-set $ws1 "1: Web"
-set $ws2 "2: Notes"
-set $ws3 "3: Comm"
-set $ws4 "4: Misc"
-set $ws5 "5: Misc"
-set $ws6 "6: Misc"
-set $ws7 "7: Music"
-set $ws8 "8: Mail"
-set $ws9 "9: Bash"
-set $ws10 "10: IDE"
-
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-bindsym $mod+c workspace prev
-bindsym $mod+r workspace next
-workspace_auto_back_and_forth yes
-
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
-workspace_layout stacking
-
-# gaps
-for_window [class=".*"] border pixel 0
-set $outer1 100
-set $outer2 275
-set $outer3 500
-set $outer4 800
-set $outer5 1000
-set $gapAdj 50
-
-set $def_hor 800
-
-gaps inner 10
-gaps vertical $outer2
-gaps horizontal $outer4
-workspace $ws1 gaps horizontal $outer4
-workspace $ws2 gaps horizontal $outer4
-workspace $ws8 gaps vertical 450
-
 mode "Gaps" { # CURRENT WORKSPACE #
         ## Presets
         bindsym u gaps outer current set 0; gaps inner current set  0
@@ -245,6 +142,109 @@ mode "Gaps Universal" { # ALL WORKSPACE #
         bindsym Escape mode "default"
         bindsym $mod+g mode "default"
 }
+
+# keybindings
+set $mod Mod4
+set $mod2 Mod1
+floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+apostrophe kill
+
+# restarting
+bindsym $mod+Shift+j reload
+bindsym $mod+Shift+p restart
+bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# window layout
+bindsym $mod+d split h
+bindsym $mod+k split v
+bindsym $mod+u fullscreen toggle
+bindsym $mod+o layout stacking
+bindsym $mod+comma layout tabbed
+bindsym $mod+period layout toggle split
+
+set $movemouse "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
+bindsym $mod+h focus left; exec $movemouse
+bindsym $mod+t focus down; exec $movemouse
+bindsym $mod+n focus up; exec $movemouse
+bindsym $mod+s focus right; exec $movemouse
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+t move down
+bindsym $mod+Shift+n move up
+bindsym $mod+Shift+s move right
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# mode bindings
+bindsym $mod+p mode "Resize"
+bindsym $mod+j mode "Focus"
+bindsym $mod+g mode "Gaps"
+bindsym $mod+Shift+g mode "Gaps Universal"
+
+# custom
+bindsym $mod+f exec --no-startup-id urxvt -e ranger
+bindsym $mod+e exec rofi -show drun
+bindsym $mod+space exec rofi -show
+
+# Windows
+set $ws1 "1: Web"
+set $ws2 "2: Notes"
+set $ws3 "3: Comm"
+set $ws4 "4: Misc"
+set $ws5 "5: Misc"
+set $ws6 "6: Misc"
+set $ws7 "7: Music"
+set $ws8 "8: Mail"
+set $ws9 "9: Bash"
+set $ws10 "10: IDE"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+c workspace prev
+bindsym $mod+r workspace next
+workspace_auto_back_and_forth yes
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+workspace_layout stacking
+
+# gaps
+for_window [class=".*"] border pixel 0
+set $outer1 100
+set $outer2 275
+set $outer3 500
+set $outer4 800
+set $outer5 1000
+set $gapAdj 50
+
+set $def_hor 800
+
+gaps inner 10
+gaps vertical $outer2
+gaps horizontal $outer4
+workspace $ws1 gaps horizontal $outer4
+workspace $ws2 gaps horizontal $outer4
+workspace $ws8 gaps vertical 450
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
