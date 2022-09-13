@@ -2,9 +2,6 @@
 # font pango:DejaVu Sans Mono, Terminus Semi-Condensed 10px
 
 for_window [class=".*"] border pixel 0
-gaps inner 15
-gaps outer -5
-smart_gaps on
 
 set_from_resource $bg i3wm.background #f0f0f0
 set_from_resource $fg i3wm.foreground #f0f0f0
@@ -78,6 +75,30 @@ mode "resize" {
         bindsym $mod+p mode "default"
 }
 
+gaps inner 15
+gaps outer -5
+smart_gaps on
+
+mode "gaps" {
+        bindsym u gaps inner current set 0
+        bindsym e gaps inner current set 15
+
+        # exit
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+}
+
+mode "gaps-all" {
+	bindsym u gaps inner all set 0
+	bindsym e gaps inner all set 15
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+}
+
+
 # keybindings
 set $mod Mod4
 set $mod2 Mod1
@@ -116,12 +137,14 @@ bindsym $mod+Shift+s move right
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# modes
+# mode bindings
 bindsym $mod+p mode "resize"
+bindsym $mod+j mode "focus"
+bindsym $mod+g mode "gaps"
+bindsym $mod+Shift+g mode "gaps-all"
 
 # custom
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
-bindsym $mod+j mode "focus"
 bindsym $mod+e exec rofi -show drun
 bindsym $mod+space exec rofi -show
 
@@ -202,7 +225,6 @@ exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
 exec --no-startup-id notion-app
 exec --no-startup-id spotify
 exec --no-startup-id franz
-exec --no-startup-id signal-desktop
 exec --no-startup-id pavucontrol
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent #start gps for use on redshift
