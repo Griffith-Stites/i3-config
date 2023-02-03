@@ -43,7 +43,7 @@ bar {
      }
 }
 
-mode "focus" {
+mode "Focus" {
         # These bindings trigger as soon as you enter the focus mode
         bindsym s floating enable, resize set 1000 1000, move position center
         bindsym m floating enable, resize set 1600 1600, move position center
@@ -56,7 +56,7 @@ mode "focus" {
         bindsym space mode "default"
 }
 
-mode "resize" {
+mode "Resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym t resize grow height 10 px or 10 ppt
         bindsym n resize shrink height 10 px or 10 ppt
@@ -70,64 +70,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+p mode "default"
-}
-
-# gaps
-for_window [class=".*"] border pixel 0
-set $outer1 100
-set $outer2 275
-set $outer3 500
-set $outer4 800
-set $outer5 1000
-set $gapAdj 50
-
-set $def_hor 800
-
-gaps inner 10
-gaps vertical $outer2
-gaps horizontal $outer4
-workspace $ws1 gaps horizontal $outer4
-workspace $ws2 gaps horizontal $outer4
-workspace $ws8 gaps vertical 450
-
-mode "gaps" {
-        ## Presets
-        bindsym u gaps outer current set 0; gaps inner current set  0
-        bindsym e gaps horizontal current set $outer4; gaps vertical current set 450; gaps inner current set 10
-
-        ## Preset horizontal
-        bindsym 1 gaps horizontal current set 0
-        bindsym 2 gaps horizontal current set $outer2
-        bindsym 3 gaps horizontal current set $outer3
-        bindsym 4 gaps horizontal current set $outer4
-        bindsym 5 gaps horizontal current set $outer5
-
-        # offset modes
-        bindsym $mod+1 gaps left current set 10 
-        bindsym $mod+2 gaps right current set 10
-
-        # Present vertical
-        bindsym apostrophe gaps vertical current set 0
-        bindsym comma gaps vertical current set $outer1
-        bindsym period gaps vertical current set 200
-        bindsym p gaps vertical current set 320
-        bindsym y gaps vertical current set 420
-
-        # Fine adjustment
-        bindsym h gaps horizontal current minus $gapAdj
-        bindsym t gaps vertical current plus $gapAdj
-        bindsym n gaps vertical current minus $gapAdj
-        bindsym s gaps horizontal current plus $gapAdj
-
-        bindsym Left gaps horizontal current minus $gapAdj
-        bindsym Down gaps vertical current plus $gapAdj
-        bindsym Up gaps vertical current minus $gapAdj
-        bindsym Right gaps horizontal current plus $gapAdj
-
-        # Exit
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+g mode "default"
 }
 
 # keybindings
@@ -166,10 +108,11 @@ bindsym $mod+Shift+s move right
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# mode bindings
-bindsym $mod+p mode "resize"
-bindsym $mod+j mode "focus"
-bindsym $mod+g mode "gaps"
+# modes
+bindsym $mod+p mode "Resize"
+bindsym $mod+j mode "Focus"
+bindsym $mod+g mode "Gaps"
+bindsym $mod+Shift+g mode "Gaps Universal"
 
 # custom
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
@@ -214,6 +157,95 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 workspace_layout stacking
 
+# gaps
+for_window [class=".*"] border pixel 0
+set $outer1 100
+set $outer2 275
+set $outer3 500
+set $outer4 800
+set $outer5 1000
+set $gapAdj 50
+
+set $def_hor 800
+
+gaps inner 10
+gaps vertical $outer2
+gaps horizontal $outer3
+workspace $ws1 gaps horizontal $outer4
+workspace $ws2 gaps horizontal $outer4
+workspace $ws8 gaps vertical 450
+
+mode "Gaps" { # CURRENT WORKSPACE #
+        ## Presets
+        bindsym u gaps outer current set 0; gaps inner current set  0
+        bindsym e gaps horizontal current set $outer4; gaps vertical current set 450; gaps inner current set 10
+
+        ## Preset horizontal
+        bindsym 1 gaps horizontal current set 0
+        bindsym 2 gaps horizontal current set $outer2
+        bindsym 3 gaps horizontal current set $outer3
+        bindsym 4 gaps horizontal current set $outer4
+        bindsym 5 gaps horizontal current set $outer5
+
+        # offset modes
+        bindsym $mod+1 gaps left current set 10 
+        bindsym $mod+2 gaps right current set 10
+
+        # Present vertical
+        bindsym apostrophe gaps vertical current set 0
+        bindsym comma gaps vertical current set $outer1
+        bindsym period gaps vertical current set 200
+        bindsym p gaps vertical current set 320
+        bindsym y gaps vertical current set 420
+
+        # Fine adjustment
+        bindsym h gaps horizontal current minus $gapAdj
+        bindsym t gaps vertical current plus $gapAdj
+        bindsym n gaps vertical current minus $gapAdj
+        bindsym s gaps horizontal current plus $gapAdj
+
+        bindsym Left gaps horizontal current minus $gapAdj
+        bindsym Down gaps vertical current plus $gapAdj
+        bindsym Up gaps vertical current minus $gapAdj
+        bindsym Right gaps horizontal current plus $gapAdj
+
+        # Exit
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+}
+
+mode "Gaps Universal" { # ALL WORKSPACE #
+        # Preset horizontal
+        bindsym 1 gaps horizontal all set 0
+        bindsym 2 gaps horizontal all set $outer3
+        bindsym 3 gaps horizontal all set $outer4
+        bindsym 4 gaps horizontal all set $outer5
+
+        bindsym $mod+1 gaps right all set 0 # offset horizontal
+
+        # Preset vertical
+        bindsym apostrophe gaps vertical all set 0
+        bindsym comma gaps vertical all set $outer2
+        bindsym period gaps vertical all set $outer3
+
+        # Fine adjustment
+        bindsym h gaps horizontal all minus $gapAdj
+        bindsym t gaps vertical all plus $gapAdj
+        bindsym n gaps vertical all minus $gapAdj
+        bindsym s gaps horizontal all plus $gapAdj
+
+        bindsym Left gaps horizontal all minus $gapAdj
+        bindsym Down gaps vertical all plus $gapAdj
+        bindsym Up gaps vertical all minus $gapAdj
+        bindsym Right gaps horizontal all plus $gapAdj
+
+        # Exit
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+}
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -253,7 +285,7 @@ exec_always pactl set-source-volume @DEFAULT_SOURCE@ 65000     # set mic volume 
 exec_always pactl set-default-sink alsa_output.usb-Schiit_Audio_Schiit_Modi_3_-00.analog-stereo
 exec_always ~/.config/i3/startup.sh
 exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "fg" -cf "$fg" -nf "$fg" -fn "ypn envypn 12" -s -geometry "400x60-10+40" -format "<b>%s</b>\n%b" -shrink  -lto 3 -nto 5 -cto 0 -align "left" -transparency 0 -padding 8 -horizontal_padding 8
-exec_always ~/.screenlayout/default.sh
+# exec_always ~/.screenlayout/default.sh
 
 # startup applications
 exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
@@ -264,4 +296,4 @@ exec --no-startup-id signal-desktop
 exec --no-startup-id pavucontrol
 exec --no-startup-id pulseeffects
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent #start gps for use on redshift
+
