@@ -143,24 +143,26 @@ ex ()
 
 # My aliases
 alias gh='cd ~/Documents/syncthing/github/'
+alias ml='/usr/local/MATLAB/R2021b/bin/matlab matlab -cefdisablegpu'
 alias jl='jupyter lab'
 alias public='sudo mount //fsvs01/public ~/fsvs01/public -o user=mstites,workgroup=olin.edu,uid=maeve'
 alias sy='cd ~/Documents/syncthing/'
 alias cl='cd ~/Documents/syncthing/school/classwork'
 alias b='bluetoothctl'
 alias teamviewer='sudo systemctl start teamviewerd && /usr/bin/teamviewer'
-alias sshnasroot='ssh root@136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
-alias sshnasmaeve='ssh 136.61.220.201 -L 15443:10.122.0.2:80 -p 3000'
+alias sshnas='ssh root@136.33.225.202 -L 15443:192.168.1.10:80 -p 48480'
+alias sshnas-local='ssh root@192.168.1.10 -L 15443:192.168.1.10:80 -p 22'
 alias media='sshfs maeve@136.61.220.201:/mnt/nas1/media ~/mnt/media -p 3000 -C'
 alias vpn='sy && cd personal/.homevpninfo && echo "Run <sudo openvpn maeveGateway.conf>"'
-alias nord='cd /etc/openvpn/ovpn_tcp && ls && echo "Run <sudo openvpn NORDVPN FILE> - SEE nordvpn.com/servers/tools for recommended server"'
-
-alias gr='cd ~/Documents/syncthing/github/summer2022/py_grama_fork'
+alias dark="xrandr --output eDP1 --brightness .5"
+alias ll='ls -l --block-size=K'
+alias lh='ls -lh'
 alias py="python"
+
 # set default text editor
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
-# export BROWSER='/usr/bin/qutebrowser'
+export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
 export PASSWORD_STORE_CHARACTER_SET='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789!#$%&()*+,-./:;=?@^_|~"'
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789'
