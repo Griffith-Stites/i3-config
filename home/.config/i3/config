@@ -3,6 +3,7 @@
 
 for_window [class=".*"] border pixel 0
 
+# Load from xresources colors
 set_from_resource $bg i3wm.background #f0f0f0
 set_from_resource $fg i3wm.foreground #f0f0f0
 set_from_resource $color0 i3wm.color0 #f0f0f0
@@ -75,13 +76,13 @@ mode "resize" {
         bindsym $mod+p mode "default"
 }
 
-gaps inner 15
-gaps outer -5
+gaps inner 10
+gaps outer 0 
 smart_gaps on
 
 mode "gaps" {
         bindsym u gaps inner current set 0
-        bindsym e gaps inner current set 15
+        bindsym e gaps inner current set 10
 
         # exit
         bindsym Return mode "default"
@@ -216,7 +217,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id clipit
-exec --no-startup-id xflux -z 02492
+# exec --no-startup-id xflux -z 02492
 exec_always ~/.config/i3/startup.sh
 exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "fg" -cf "$fg" -nf "$fg" -fn "ypn envypn 12" -s -geometry "400x60-10+40" -format "<b>%s</b>\n%b" -shrink  -lto 3 -nto 5 -cto 0 -align "left" -transparency 0 -padding 8 -horizontal_padding 8
 
@@ -224,7 +225,6 @@ exec_always --no-startup-id dunst -lb "$bg" -nb "$bg" -cb "$bg" -lf "$fg" -bf "f
 exec --no-startup-id i3-msg 'workspace $ws8; exec thunderbird'
 exec --no-startup-id notion-app
 exec --no-startup-id spotify
-exec --no-startup-id franz
 exec --no-startup-id pavucontrol
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent #start gps for use on redshift
