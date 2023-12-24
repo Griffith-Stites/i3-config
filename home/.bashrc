@@ -160,8 +160,8 @@ alias lh='ls -lh'
 alias py="python"
 
 # set default text editor
-export EDITOR='/usr/bin/vim'
-export VISUAL='/usr/bin/vim'
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/nvim'
 export BROWSER='/usr/bin/qutebrowser'
 export PATH=$PATH:~/.local/bin
 export PASSWORD_STORE_CHARACTER_SET='abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789!#$%&()*+,-./:;=?@^_|~"'
