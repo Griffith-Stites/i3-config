@@ -1,10 +1,9 @@
 # Aesthetics
-# font pango:DejaVu Sans Mono, Terminus Semi-Condensed 12px
+# font pango:Noto Sans 10
+# font pango:DejaVu Sans Mono 10
+font pango:JetBrainsMono NFM 9
 # font pango:Source Code Pro 6, regular regular
-font pango:Terminess 10
-
-
-
+# font pango:Terminess 10
 
 for_window [class=".*"] border pixel 0
 
