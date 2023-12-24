@@ -228,3 +228,4 @@ exec --no-startup-id spotify
 exec --no-startup-id pavucontrol
 exec --no-startup-id i3-msg 'workspace $ws1; exec qutebrowser'
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent #start gps for use on redshift
+exec --no-startup-id picom -f
