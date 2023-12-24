@@ -54,7 +54,10 @@ URxvt*saveLines:                  5000
 URxvt*internalBorder:             5
 
 ! real transparency using xcompmgr
-urxvt*background: rgba:0000/0000/0200/c400
+! 77%
+! urxvt*background: rgba:0000/0000/0200/c400
+! slightly darker: 80%
+urxvt*background: rgba:0000/0000/0200/cc00
 ! urxvt*background: rgba:3f00/3f00/3f00/dddd
 ! URxvt.background: [95]#000000
 
