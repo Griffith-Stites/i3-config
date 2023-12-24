@@ -11,7 +11,7 @@ pkgs_core=(
     gimp pdfarranger inkscape transmission-gtk openvpn sshfs
     python-adblock pavucontrol scrot redshift atril
     bash-completion thunderbird speedtest-cli evince
-    neovim
+    neovim noto-fonts-emoji unzip
 )
 pkgs_dev=(
     r code
@@ -27,7 +27,7 @@ pkgs_surface=(
 
 )
 pkgs_yay=(
-  spotify notion-app zoom nordvpn-bin pulseeffect-legacy-git google-chrome
+  spotify notion-app zoom nordvpn-bin pulseeffect-legacy-git google-chrome fontpreview
 )
 
 # Prompt function for selecting to remove / keep
